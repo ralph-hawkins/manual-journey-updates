@@ -1,0 +1,61 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate>
+      {% set errorMessage = "Select if product is available as a single item or as a multi-item kit" %}
+      {% if errorState %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: errorMessage,
+              href: "#passport-issued-error"
+            }
+          ]
+        }) }}
+      {% endif %}
+      <h1 class='govuk-heading-xl'>
+        Multi-item kits
+      </h1>
+      <p>
+        Multi-item kits are composed of items that are not marketed separately. They are sold as a kit and intended to be used as a mix or sequentially.
+      </p>
+      <p class='govuk-!-margin-bottom-1'>
+        Examples of multi-component cosmetics include:
+      </p>
+      <ul class='govuk-list govuk-list--bullet'>
+        <li>hair dye sets</li>
+        <li>skin peeling kits</li>
+        <li>permanent styling products</li>
+        <li>anti-age or revitalising kits</li>
+      </ul>
+      <p>
+        If the cosmetic product is sold as a gift set where the components are not mixed or used sequentially, submit a notification for each product separately.
+      </p>
+      {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "changed-name",
+          name: "changed-name",
+          fieldset: {
+            legend: {
+              text: "Is the product available as a single item or as a multi-item kit?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          errorMessage: {
+            text: errorMessage
+          } if errorState,
+          items: [
+            {
+              value: "yes",
+              text: "Single item"
+            },
+            {
+              value: "no",
+              text: "Multi-item kit"
+            }
+          ]
+        }) }}
+      </form>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    pageTitle: 'EU notification files',
+    postBrexit: 'No'
+    }) }}
+{% endblock %}
+
+{% block content %}
+  {% include "./do-you-have-the-files-from-your-eu-notification_REF.html" %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+ {% include "./do-you-have-the-files-from-your-eu-notification_REF.html" %}
+{% endblock %}

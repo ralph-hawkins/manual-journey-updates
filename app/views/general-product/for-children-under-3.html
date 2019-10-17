@@ -1,0 +1,18 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    pageTitle: 'Is the product intended for children under 3?',
+    postBrexit: 'Yes'
+    }) }}
+{% endblock %}
+
+{% block content %}
+ {% set errorState = true %}
+ {% include "./for-children-under-3_REF.html" %}
+{% endblock %}

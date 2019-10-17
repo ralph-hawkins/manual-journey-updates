@@ -1,0 +1,29 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    pageTitle: 'Kit items',
+    postBrexit: 'No'
+    }) }}
+{% endblock %}
+
+{% set heading = 'Kit items' %}
+{% set label = 'Kit item' %}
+{% set removeButtonText = 'Remove item' %}
+{% set addButtonText = 'Add an item' %}
+
+{% block content %}
+  {% include "../includes/list-items_REF.html" %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+{#  {% include "./kit-items_REF.html" %} #}
+{% endblock %}

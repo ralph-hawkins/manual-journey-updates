@@ -1,0 +1,25 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    pageTitle: 'Is the product available in shades?',
+    postBrexit: 'No',
+    notes: 'We talked before about having a follow-up question, I think if this is better covered by guidance.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+  {% include "./is-the-product-available-in-shades_REF.html" %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+ {% include "./is-the-product-available-in-shades_REF.html" %}
+{% endblock %}

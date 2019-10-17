@@ -1,0 +1,44 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate>
+      {% set errorMessage = "Select yes if the product contains a hair dye" %}
+      {% if errorState %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: errorMessage,
+              href: "#passport-issued-error"
+            }
+          ]
+        }) }}
+      {% endif %}
+
+      {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "changed-name",
+          name: "changed-name",
+          fieldset: {
+            legend: {
+              text: "Does the product contain a hair dye?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          errorMessage: {
+            text: errorMessage
+          } if errorState,
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+      </form>
+  </div>
+</div>

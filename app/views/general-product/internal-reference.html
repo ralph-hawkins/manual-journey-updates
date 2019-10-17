@@ -1,0 +1,34 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    pageTitle: 'Internal reference',
+    postBrexit: 'No'
+    }) }}
+{% endblock %}
+
+{% block content %}
+  {% set heading = "Internal reference" %}
+  {% set explanation = "You can use this to identify your products. Only people in your organisation can see this reference." %}
+  {% set question = "Do you want to add an internal reference?" %}
+  {% set inputLabel = "Internal reference" %}
+  {% include "./internal-reference_REF.html" %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+{#  {% set errorState = true %} #}
+ {% include "./internal-reference-error-no-select_REF.html" %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+  {% include "./internal-reference-error-no-input_REF.html" %}
+{% endblock %}

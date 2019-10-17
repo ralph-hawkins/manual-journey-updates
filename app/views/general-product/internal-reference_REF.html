@@ -1,0 +1,67 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate>
+      {% set errorMessage = "Select yes to add an internal reference" %}
+      {% if errorState %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: errorMessage,
+              href: "#passport-issued-error"
+            }
+          ]
+        }) }}
+      {% endif %}
+        <h1 class='govuk-heading-xl'>
+          {{ heading }}
+        </h1>
+        <p>
+          {{ explanation }}
+        </p>
+        {% set referenceNumber %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          type: "referenceNumber",  
+          label: {
+            text: inputLabel
+          },
+          errorMessage: {
+            text: "Enter an internal reference"
+          } if errorState,
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "how-contacted-conditional",
+          name: "how-contacted",
+          fieldset: {
+            legend: {
+              text: question,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          errorMessage: {
+            text: errorMessage
+          } if errorState,
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: referenceNumber
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+      </form>
+  </div>
+</div>

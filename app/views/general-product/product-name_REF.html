@@ -1,0 +1,38 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate>
+      {% set errorMessage = "Enter the product name" %}
+      {% if errorState %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Select yes if the products have been notified on CPNP",
+              href: "#passport-issued-error"
+            }
+          ]
+        }) }}
+      {% endif %}
+        <h1 class='govuk-heading-xl'>
+          Product name
+        </h1>
+        <p>
+          Enter the name as it appears on the label, including the brand, range and product name.
+        </p>
+        {{ govukInput({
+          label: {
+            text: "Product name",
+            classes: 'govuk-heading-xl'
+          },
+          id: "product-name",
+          name: "product-name",
+          hint: {
+            text: "For example, ‘Company name, Skin cream with aloe vera’."
+          },
+          errorMessage: {
+            text: errorMessage
+          } if errorState
+        }) }}
+      </form>
+  </div>
+</div>

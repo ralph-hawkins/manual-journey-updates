@@ -1,0 +1,38 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate>
+      {% set errorMessage = "Select yes if the product contains a hair dye" %}
+      {% if errorState %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: errorMessage,
+              href: "#passport-issued-error"
+            }
+          ]
+        }) }}
+      {% endif %}
+
+      <h1 class="govuk-heading-xl">pH range of the items when mixed as instructed</h1>
+        <div class="govuk-form-group">
+          {{ govukInput({
+            label: {
+              text: "Maximum pH"
+            },
+            classes: "govuk-input--width-4",
+            id: "width-4",
+            name: "width-4"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Minimum pH"
+            },
+            classes: "govuk-input--width-4",
+            id: "width-4",
+            name: "width-4"
+          }) }}
+        </div>
+      </form>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    pageTitle: 'Will these products be notified in the EU?',
+    postBrexit: 'No'
+    })
+  }}
+{% endblock %}
+
+{% block content %}
+  {% include "./will-these-products-be-notified-in-the-eu_REF.html" %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+ {% include "./will-these-products-be-notified-in-the-eu_REF.html" %}
+{% endblock %}

@@ -1,8 +1,8 @@
-{% macro meta(pageTitle, preBrexit, ticketNumber, ticketHref) %}
+{% macro meta(data) %}
 <div class='govuk-grid-row'>
   <div class="govuk-grid-column-full pageMeta">
     <p class=''>
-      <a href='/'>Home</a>
+      <a href='/'>Back</a>
     </p>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -10,7 +10,7 @@
           Page title:
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ pageTitle }}
+          {{ data.pageTitle }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -18,16 +18,26 @@
           Post-Brexit only:
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ preBrexit }}
+          {{ data.postBrexit }}
         </dd>
       </div>
-      {% if ticketNumber %}
+      {% if data.ticketNumber %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Ticket:
         </dt>
         <dd class="govuk-summary-list__value">
-          <a href='{{ ticketHref }}'>CosBeta-{{ ticketNumber }}</a>
+          <a href='{{ ticketHref }}'>CosBeta-{{ data.ticketNumber }}</a>
+        </dd>
+      </div>
+      {% endif %}
+      {% if data.notes %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Notes:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.notes }}
         </dd>
       </div>
       {% endif %}

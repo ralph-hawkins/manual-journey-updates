@@ -1,0 +1,24 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    pageTitle: 'Multi-item kits',
+    postBrexit: 'No'
+    }) }}
+{% endblock %}
+
+{% block content %}
+  {% include "./is-the-product-available-as-a-single-item-or-as-a-kit_REF.html" %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+ {% include "./is-the-product-available-as-a-single-item-or-as-a-kit_REF.html" %}
+{% endblock %}

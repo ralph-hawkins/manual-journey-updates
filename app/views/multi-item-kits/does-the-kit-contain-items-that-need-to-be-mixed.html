@@ -1,0 +1,18 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    pageTitle: 'Does the kit contain items that need to be mixed?',
+    postBrexit: 'No'
+    }) }}
+{% endblock %}
+
+{% block content %}
+ {% set errorState = true %}
+ {% include "./does-the-kit-contain-items-that-need-to-be-mixed_REF.html" %}
+{% endblock %}

@@ -1,0 +1,147 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      {% set errorMessage = "Select yes if the product contains a hair dye" %}
+      {% if errorState %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: errorMessage,
+              href: "#passport-issued-error"
+            }
+          ]
+        }) }}
+      {% endif %}
+
+          <h1 class="govuk-heading-xl">
+            {{ heading }}
+          </h1>
+        </div>
+        <div class="govuk-grid-column-full">
+          <div class='govuk-form-group'>
+            <label class="govuk-label" for="event-name">
+              {{ label }} <span class='item-number'>1</span>
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
+            <button class="govuk-button govuk-button--secondary remove-button" data-module="govuk-button">
+              {{ removeButtonText }}
+            </button>
+          </div>
+          <div class='govuk-form-group'>
+            <label class="govuk-label" for="event-name">
+              {{ label }} <span class='item-number'>2</span>
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
+            <button class="govuk-button govuk-button--secondary remove-button" data-module="govuk-button">
+              {{ removeButtonText }}
+            </button>
+          </div>
+          <div class='hidden-item govuk-visually-hidden govuk-form-group'>
+            <label class="govuk-label" for="event-name">
+              {{ label }} <span class='item-number'>3</span>
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
+            <button class="govuk-button govuk-button--secondary remove-button" data-module="govuk-button">
+              {{ removeButtonText }}
+            </button>
+          </div>
+          <div class='hidden-item govuk-visually-hidden govuk-form-group'>
+            <label class="govuk-label" for="event-name">
+              {{ label }} <span class='item-number'>4</span>
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
+            <button class="govuk-button govuk-button--secondary remove-button" data-module="govuk-button">
+              {{ removeButtonText }}
+            </button>
+          </div>
+          <div class='hidden-item govuk-visually-hidden govuk-form-group'>
+            <label class="govuk-label" for="event-name">
+              {{ label }} <span class='item-number'>5</span>
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
+            <button class="govuk-button govuk-button--secondary remove-button" data-module="govuk-button">
+              {{ removeButtonText }}
+            </button>
+          </div>
+          <div class='hidden-item govuk-visually-hidden govuk-form-group'>
+            <label class="govuk-label" for="event-name">
+              {{ label }} <span class='item-number'>6</span>
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
+            <button class="govuk-button govuk-button--secondary remove-button" data-module="govuk-button">
+              {{ removeButtonText }}
+            </button>
+          </div>
+          <div class='hidden-item govuk-visually-hidden govuk-form-group'>
+            <label class="govuk-label" for="event-name">
+              {{ label }} <span class='item-number'>7</span>
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
+            <button class="govuk-button govuk-button--secondary remove-button" data-module="govuk-button">
+              {{ removeButtonText }}
+            </button>
+          </div>
+          <div class='hidden-item govuk-visually-hidden govuk-form-group'>
+            <label class="govuk-label" for="event-name">
+              {{ label }} <span class='item-number'>8</span>
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
+            <button class="govuk-button govuk-button--secondary remove-button" data-module="govuk-button">
+              {{ removeButtonText }}
+            </button>
+          </div>
+          <div class='hidden-item govuk-visually-hidden govuk-form-group'>
+            <label class="govuk-label" for="event-name">
+              {{ label }} <span class='item-number'>9</span>
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
+            <button class="govuk-button govuk-button--secondary remove-button" data-module="govuk-button">
+              {{ removeButtonText }}
+            </button>
+          </div>
+          <div class='hidden-item govuk-visually-hidden govuk-form-group'>
+            <label class="govuk-label" for="event-name">
+              {{ label }} <span class='item-number'>10</span>
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
+            <button class="govuk-button govuk-button--secondary remove-button" data-module="govuk-button">
+              {{ removeButtonText }}
+            </button>
+          </div>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" id='add-item-button'>
+              {{ addButtonText }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+<script type="text/javascript">
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    const secondaryButton = document.getElementById('add-item-button')
+    const removeButtons = document.getElementsByClassName('remove-button')
+    const itemNumbers = document.getElementsByClassName('item-number')
+    const formGroup = document.getElementsByClassName('govuk-form-group')
+
+    secondaryButton.addEventListener('click', function() {
+        const hiddenItems = document.getElementsByClassName('hidden-item')
+        if ( hiddenItems.length == 1 ) {
+          secondaryButton.classList.add('govuk-visually-hidden')
+        }
+        if ( hiddenItems.length > 0) {
+          hiddenItems[0].classList.remove('govuk-visually-hidden', 'hidden-item')
+        }
+    })
+
+
+    for(var i = 0; i < removeButtons.length; i++) {
+      removeButtons[i].addEventListener('click', function(e) {
+        this.parentElement.classList.add('govuk-visually-hidden')
+      })
+    }
+
+  })
+
+
+</script>

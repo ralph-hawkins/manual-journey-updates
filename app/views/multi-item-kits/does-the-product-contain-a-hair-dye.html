@@ -1,0 +1,24 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    pageTitle: 'Does the product contain a hair dye?',
+    postBrexit: 'Yes'
+    }) }}
+{% endblock %}
+
+{% block content %}
+ {% include "./does-the-product-contain-a-hair-dye_REF.html" %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+ {% include "./does-the-product-contain-a-hair-dye_REF.html" %}
+{% endblock %}

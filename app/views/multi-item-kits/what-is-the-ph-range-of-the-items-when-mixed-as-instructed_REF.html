@@ -1,0 +1,52 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate>
+      {% set errorMessage = "Select the pH range of the product when mixed as instructed" %}
+      {% if errorState %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: errorMessage,
+              href: "#passport-issued-error"
+            }
+          ]
+        }) }}
+      {% endif %}
+
+      {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "changed-name",
+          name: "changed-name",
+          fieldset: {
+            legend: {
+              text: "What is the pH range of the product when mixed as instructed?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          errorMessage: {
+            text: errorMessage
+          } if errorState,
+          items: [
+            {
+              value: "the-minimum-ph-is-3-or-higher-and-the-maximum-p-h-is-10-or-lower",
+              text: "The minimum pH is 3 or higher, and the maximum pH is 10 or lower"
+            },
+            {
+              value: "the-minimum-ph-is-lower-than-3",
+              text: "The minimum pH is lower than 3"
+            },
+            {
+              value: "the-maximum-ph-is-higher-than-10",
+              text: "The maximum pH is higher than 10"
+            },
+            {
+              value: "it-does-not-have-a-ph",
+              text: "It does not have a pH"
+            }
+          ]
+        }) }}
+      </form>
+  </div>
+</div>

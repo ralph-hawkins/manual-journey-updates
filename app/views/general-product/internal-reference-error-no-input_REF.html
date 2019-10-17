@@ -1,0 +1,58 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate="">
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#passport-issued-error">Enter an internal reference or select no</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h1 class="govuk-heading-xl">
+        {{ heading }}
+      </h1>
+      <p>
+        {{ explanation }}
+      </p>
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-2-error">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              {{ question }}
+            </h2>
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-2" name="how-contacted" type="radio" value="yes" aria-controls="conditional-how-contacted-2" aria-expanded="false" checked>
+              <label class="govuk-label govuk-radios__label" for="how-contacted-2">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional" id="conditional-how-contacted-2">
+              <div class="govuk-form-group govuk-form-group--error">
+                <label class="govuk-label" for="add-reference">
+                  {{ inputLabel }}
+                </label>
+                <span id="add-reference-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Enter an internal reference or select no
+                </span>
+                <input class="govuk-input govuk-input--error" id="add-reference" name="add-reference" type="referenceNumber" aria-describedby="add-reference-error" spellcheck="false">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-2-2" name="how-contacted" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-2-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+  </div>
+</div>
