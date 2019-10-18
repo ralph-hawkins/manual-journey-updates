@@ -13,13 +13,61 @@
   }}
 {% endblock %}
 
+
 {% block content %}
-  {% include "./was-this-product-notified-in-the-eu-before-brexit_REF.html" %}
+
+{% macro pageContent(errorState=false) %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate>
+      {% set errorMessage = "Select if the product was notified in the EU before Brexit" %}
+      {% if errorState %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: errorMessage,
+              href: "#passport-issued-error"
+            }
+          ]
+        }) }}
+      {% endif %}
+
+      {{ govukRadios({
+          idPrefix: "changed-name",
+          name: "changed-name",
+          fieldset: {
+            legend: {
+              text: "Was this product notified in the EU before Brexit?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          errorMessage: {
+            text: errorMessage
+          } if errorState,
+          items: [
+            {
+              value: "yes",
+              text: "Yes, the product was notified before 11pm 31 October 2019"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+      </form>
+  </div>
+</div>
+{% endmacro %}
+
+  {{pageContent()}}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <hr>
     </div>
   </div>
- {% set errorState = true %}
- {% include "./was-this-product-notified-in-the-eu-before-brexit_REF.html" %}
+
+ {{pageContent(errorState=true)}}
 {% endblock %}
