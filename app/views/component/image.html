@@ -10,14 +10,14 @@
     url: '/label-artwork',
     pageTitle: 'Artwork for the product label',
     postBrexit: 'No',
-    ticketNumber: 'COSBETA 709',
-    ticketHref: 'https://regulatorydelivery.atlassian.net/browse/COSBETA-709?atlOrigin=eyJpIjoiNDhmZDNmYjU1MDdmNDcyYmJmOTljZjY1M2ZhNGRjNzEiLCJwIjoiaiJ9'
+    ticketNumber: 'COSBETA 712',
+    ticketHref: 'https://regulatorydelivery.atlassian.net/browse/COSBETA-712',
+    notes: '<p class="in-page-meta">Different content for single and multi-item kits.</p>
+            <p class="in-page-meta">For a multi-item product, there should be 1 image per item.</p>'
     }) }}
 {% endblock %}
 
-{% set errorMessage = 'Select image' %}
-
-{% macro pageContent(errorState=false) %}
+{% macro singleItem(errorState=false) %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="/form-handler" method="post" novalidate>
@@ -26,24 +26,27 @@
           titleText: "There is a problem",
           errorList: [
             {
-              text: errorMessage,
+              text: 'Select an image',
               href: "#passport-issued-error"
             }
           ]
         }) }}
       {% endif %}
       <h1 class='govuk-heading-xl'>
-        Artwork for the product label
+        Upload an image of the product label
       </h1>
       <p>
-        For National Poison Information Services to identify the product, you need to upload a image of the product’s artwork.
+        For National Poison Information Services to identify the product, you need to upload an image of the product label.
       </p>
       <p>
-        To further help production identification you can also provide a photo of the product.
+        To further help identify the product, you can also provide a photo of it.
       </p>
-      <p>You can upload up to 10 images. Each file can be up to 30MB and must be a JPG, PNG or PDF.</p>
-      <p>The image must be in focus and all packaging text legible.</p>
-      <p>The images you need to provide depend on the type of product and how it’s packaged.</p>
+       <p>
+       The images you need to provide depend on the type of product and how it’s packaged.
+     </p>
+     <p>
+       The image must be in focus and all packaging text legible.
+     </p>
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -55,46 +58,153 @@
             Example 1
           </h2>
           <p>
-            The product has no secondary packaging (for example, a standalone bottle of shampoo).
+            The product is a standalone bottle with no secondary packaging.
           </p>
           <p>
-            You must supply the label artwork and you can supply a clear photo of the bottle.
+            You must supply an image of the bottle label. You can also supply a photo of the bottle.
           </p>
           <h2 class="govuk-heading-s">
             Example 2
           </h2>
           <p>
-            The product has secondary packaging (for example, a bottle of shampoo in a box).
+            The product is a bottle in a box.
           </p>
-          <p>
-            You must supply the label artwork and a clear photo of the box. You can also attach the artwork for the bottle label and a photo of the bottle.
+          <p class='govuk-!-margin-bottom-1'>
+            You must supply an image of the bottle label. You can also supply:
           </p>
-          <h2 class="govuk-heading-s">
-            Example 3
-          </h2>
-          <p>
-            The product contains several components (for example, hair dye).
-          </p>
-          <p>
-            You must supply the artwork and, a photo of the set. You can also attach the artwork for each bottle label and a photo of each bottle.
-          </p>
-          <p>
-            If the product features instructions or other information on a separate leaflet, label, tag or card, you must attach this artwork as well.
-          </p>
+          <ul class='govuk-list govuk-list--bullet'>
+             <li>a photo of the bottle</li>
+             <li>an image of the label on the box</li>
+             <li>a photo of the packing</li>
+          </ul>
         </div>
       </details>
-      {% include '../includes/upload.html' %}
-      </form>
+      {{ govukFileUpload({
+            id: "file-upload-1",
+            name: "file-upload-1",
+            label: {
+              classes: 'govuk-label--s',
+              text: "Upload a file"
+            },
+            errorMessage: {
+              text: 'Select an image'
+            } if errorState
+          }) }}
+    </form>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro multiItem(errorState=false) %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate>
+      {% if errorState %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: 'Select 2 or more images',
+              href: "#passport-issued-error"
+            }
+          ]
+        }) }}
+      {% endif %}
+      <h1 class='govuk-heading-xl'>
+        Upload images of the item labels
+      </h1>
+      <p>
+        For National Poison Information Services to identify the item, you need to upload images of the item labels.
+      </p>
+      <p>
+        To further help identify the items, you can also provide a photo of the kit and its items.
+      </p>
+      <p>You can upload up to 10 images. Each file can be up to 30MB and must be a JPG, PNG or PDF.</p>
+      <p>
+        Upload an image of the label for each item in the kit.
+      </p>
+      <p>
+        The image must be in focus and all packaging text legible.
+      </p>
+      {{ govukFileUpload({
+        id: "file-upload-1",
+        name: "file-upload-1",
+        label: {
+          classes: 'govuk-label--s',
+          text: "Upload a file"
+        },
+        errorMessage: {
+          text: 'Select 2 or more images'
+        } if errorState
+      }) }}
+    </form>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro multiItem(errorState=false) %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate>
+      {% if errorState %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: 'Select 2 or more images',
+              href: "#passport-issued-error"
+            }
+          ]
+        }) }}
+      {% endif %}
+      <h1 class='govuk-heading-xl'>
+        Upload images of the item labels
+      </h1>
+      <p>
+        For National Poison Information Services to identify the item, you need to upload images of the item labels.
+      </p>
+      <p>
+        To further help identify the items, you can also provide a photo of the kit and its items.
+      </p>
+      <p>You can upload up to 10 images. Each file can be up to 30MB and must be a JPG, PNG or PDF.</p>
+      <p>
+        Upload an image of the label for each item in the kit.
+      </p>
+      <p>
+        The image must be in focus and all packaging text legible.
+      </p>
+      {{ govukFileUpload({
+        id: "file-upload-1",
+        name: "file-upload-1",
+        label: {
+          classes: 'govuk-label--s',
+          text: "Upload a file"
+        },
+        errorMessage: {
+          text: 'Select 2 or more images'
+        } if errorState
+      }) }}
+    </form>
   </div>
 </div>
 {% endmacro %}
 
 {% block content %}
-  {{pageContent()}}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <hr>
-    </div>
-  </div>
- {{pageContent(errorState=true)}}
+  <p class='in-page-meta'>
+    Single item product:
+  </p>
+  {{singleItem()}}
+  {% include '../includes/page-break.html' %}
+  {{singleItem(errorState=true)}}
+  {% include '../includes/page-break.html' %}
+  <p class='in-page-meta'>
+    Multi item product:
+  </p>
+  {{multiItem()}}
+  {% include '../includes/page-break.html' %}
+  {{multiItem(errorState=true)}}
+  <script type="text/javascript">
+    const 
+  </script>
 {% endblock %}
+

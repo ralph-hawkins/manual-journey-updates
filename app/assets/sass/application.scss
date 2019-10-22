@@ -32,6 +32,11 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.in-page-meta {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+}
+
 hr {
   margin: 40px 0px 40px;
   border-top: 1px solid black;
@@ -40,4 +45,11 @@ hr {
 .remove-button {
   float: both;
   margin-left: 10px;
+}
+
+.casNumber {
+  display: inline;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  @include govuk-font(16, $tabular:true);
 }

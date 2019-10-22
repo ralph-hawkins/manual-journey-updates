@@ -7,14 +7,14 @@
           titleText: "There is a problem",
           errorList: [
             {
-              text: "Select yes if the products have been notified on CPNP",
+              text: "Enter a product name",
               href: "#passport-issued-error"
             }
           ]
         }) }}
       {% endif %}
         <h1 class='govuk-heading-xl'>
-          Product name
+          What’s the product called?
         </h1>
         <p>
           Enter the name as it appears on the label, including the brand, range and product name.
@@ -22,12 +22,12 @@
         {{ govukInput({
           label: {
             text: "Product name",
-            classes: 'govuk-heading-xl'
+            classes: 'govuk-label--m'
           },
           id: "product-name",
           name: "product-name",
           hint: {
-            text: "For example, ‘Company name, Skin cream with aloe vera’."
+            text: "For example, ‘Brand name, Skin cream with aloe vera’."
           },
           errorMessage: {
             text: errorMessage

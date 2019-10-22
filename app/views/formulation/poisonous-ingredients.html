@@ -1,0 +1,339 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    url: '/poisonous-ingredients',
+    pageTitle: 'Poisonous ingredients',
+    postBrexit: 'Yes'
+    }) }}
+{% endblock %}
+
+{% set tableBlock %}
+{% from "govuk/components/table/macro.njk"            import govukTable %}
+   <h2 class='govuk-heading-s'>
+    Glycols and glycol ethers
+  </h2>
+  {{ govukTable({
+    caption: "Above 1%",
+    head: [
+      {
+        text: "Ingredient"
+      },
+      {
+        text: "CAS number"
+      }
+    ],
+    rows: [
+      [ { text: 'Buteth-2 acetate '}, { text: '124-17-4' } ],
+      [ { text: 'Butoxydiglycol '}, { text: '112-34-5' } ],
+      [ { text: 'Butoxyethanol'}, { text: '111-76-2' } ],
+      [ { text: 'Butoxyethyl acetate'}, { text: '112-07-02' } ],
+      [ { text: 'Diethoxydiglycol '}, { text: '112-36-7' } ],
+      [ { text: 'Ethoxydiglycol '}, { text: '111-90-0' } ],
+      [ { text: 'Ethoxydiglycol acetate '}, { text: '112-15-2' } ],
+      [ { text: 'Ethylene glycol only (also known as Glycol)'}, { text: '107-21-1' } ]
+    ]
+  }) }}
+{% endset %}
+
+
+{% macro ingredientsListLine(ingredient, casNumber) %}
+<li class=''>{{ingredient}} {% if casNumber %}<span class="govuk-hint casNumber">CAS {{casNumber}}</span>{% endif %}</li>
+{% endmacro %}
+
+{% macro ingredientsList(data) %}
+<ul class='govuk-list govuk-list--bullet'>
+  {% for ingredient in data %}
+    {{ ingredientsListLine(ingredient[0], ingredient[1])}}
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% set glycolsAndGlycolEthers1percent = [
+  ["Buteth-2 acetate",  "124-17-4"],
+  ["Butoxydiglycol",  "112-34-5"],
+  ["Butoxyethanol", "111-76-2"],
+  ["Butoxyethyl acetate", "112-07-02"],
+  ["Diethoxydiglycol", "112-36-7"],
+  ["Ethoxydiglycol",  "111-90-0"],
+  ["Ethoxydiglycol acetate",  "112-15-2"],
+  ["Ethylene glycol only (also known as Glycol)", "107-21-1"]
+]%}
+
+{% set glycolsAndGlycolEthers10percent = [
+  ["Dipropylene glycol", "110-98-5, 25265-71-8" ],
+  ["Dipropylene glycol dimethyl ether", "111109-77-4" ],
+  ["Isobornyl dipropylene glycol ethers", "958872-63-4" ],
+  ["Methoxyisopropanol", "107-98-2" ],
+  ["Methoxyisopropyl acetate", "108-65-6" ],
+  ["PPG-2 methyl ether", "13429-07-7, 34590-94-8" ],
+  ["PPG-2 methyl ether acetate", "88917-22-0" ],
+  ["Propylene glycol", "57-55-6"],
+  ["Propylene glycol butyl ether", "5131-66-8" ]
+]%}
+
+{% set hydrocarbonSolvents = [
+  [ "Cyclohexane", "110-82-7"],
+  [ "Hydrogenated didodecene", "151006-61-0"],
+  [ "Isopentane ", "78-78-4"],
+  [ "Pentane", "109-66-0"],
+  [ "Toluene", "108-88-3"],
+  [ "Turpentine",  "8006-64-2, 9005-90-7, 8052-14-0"]
+]%}
+
+{% set alcoholAnyAmount = [
+  [ "Ethanol" ],
+  [ "Alcohol", "64-17-5"],
+  [ "Alcohol denatured"],
+  [ "Isopropanol", "67-63-0" ]
+]%}
+
+{% set alcohol1percent = [
+  [ "n-Butyl alcohol", "71-36-3" ],
+  [ "n-Propyl alcohol (also known as Propyl alcohol)", "71-23-8 " ],
+  [ "t-Butyl alcohol", "75-65-0 " ]
+]%}
+
+{% set otherAnyAmount = [
+ [ " Brucine Sulfate ", "  4845-99-2 " ]
+]%}
+
+{% set otherPoint1percent = [
+  [ "Butyrolactone", "  96-48-0" ],
+  [ "Chloroplatinic acid", "16941-12-1" ],
+  [ "Copper sulphate", "  7758-98-7" ],
+  [ "Dimethyltolylamine", "99-97-8" ],
+  [ "Methyl acetate", "79-20-9" ],
+  [ "Potassium chlorate", "3811-04-9" ],
+  [ "Sodium chlorate", "7775-09-9" ],
+  [ "Triethyl phosphate", "78-40-0" ],
+  [ "m-Cresol", "108-39-4" ],
+  [ "o-Cresol", "95-48-7" ],
+  [ "p-Cresol", "106-44-5" ],
+  [ "Mixed Cresols", "1319-77-3" ]
+]%}
+
+{% set otherPoint2percent = [
+  [ "Vitamin A or any of its derivatives (calculated as Retinol)", "68-26-8 or 11103-57-4" ]
+]%}
+
+{% set otherPoint5percent = [
+  [ "Xanthine derivatives (for example, caffeine, theophylline, theobromine, plant extracts containing xanthine derivatives e.g. paulinia cupana (guarana) extracts or powders)" ]
+]%}
+
+{% set other1percent = [
+  [ " Butyl acetate ", "  123-86-4  " ],
+  [ " Ethyl acetate ", "  141-78-6  " ]
+]%}
+
+{% set other5percent = [
+  [ " Cyclohexanone ", "  108-94-1  " ],
+  [ " Ethyl ether ", "  60-29-7 " ],
+  [ " MEK (also known as Butanone)  ", "  78-93-3 " ],
+  [ " MIBK (also known as Methyl isobutyl ketone) ", "  108-10-1  " ]
+]%}
+
+{% set essentialOilsPoint15percent = [
+  [ "Camphor", "464-49-3 or 76-22-2 " ]
+]%}
+
+{% set essentialOilsPoint15percent = [
+  [ "Camphor", "464-49-3 or 76-22-2 " ]
+]%}
+
+{% set essentialOilsPoint5percent = [
+  [ "any individual essential oil" ],
+  [ "total amount of essential oils" ]
+]%}
+
+{% set others = [
+  [ "Alkaline agents (including ammonium hydroxide liberators)" ],
+  [ "Anti-dandruff agents" ],
+  [ "Anti-hair loss agents" ],
+  [ "Anti-pigmenting and depigmenting agents" ],
+  [ "Cationic surfactants with 3 or 4 chains or groups with a length shorter than Carbon 12 (including straight, branched, cyclic or aromatic groups) if the surfactant is for non-preservative purposes" ],
+  [ "Chemical exfoliating agents" ],
+  [ "Compounds that release hydrogen peroxide" ],
+  [ "Fluoride compound (calculated as fluorine)" ]
+]%}
+
+
+{% set bulletBlock %} 
+
+  <h2 class='govuk-heading-s'>
+    Alcohols
+  </h2>
+  <p class='govuk-!-margin-bottom-1'>
+    Any amount of:
+  </p>
+  {{ ingredientsList(alcoholAnyAmount)}}
+  <p class='govuk-!-margin-bottom-1'>
+    Above 1% w/w:
+  </p>
+  {{ ingredientsList(alcohol1percent)}}
+
+  <h2 class='govuk-heading-s'>
+    Essential oils (Camphor, Menthol or Eucalyptol)
+  </h2>
+  <p class='govuk-!-margin-bottom-1'>
+    Above 0.15% w/w:
+  </p>
+  {{ ingredientsList(essentialOilsPoint15percent)}}
+  <p class='govuk-!-margin-bottom-1'>
+    Above 0.5% w/w:
+  </p>
+  {{ ingredientsList(essentialOilsPoint5percent)}}
+
+  <h2 class='govuk-heading-s'>
+    Glycols and glycol ethers
+  </h2>
+  <p class='govuk-!-margin-bottom-1'>
+    Above 1% w/w:
+  </p>
+  {{ ingredientsList(glycolsAndGlycolEthers1percent)}}
+  <p class='govuk-!-margin-bottom-1'>
+    Above 10% w/w:
+  </p>
+  {{ ingredientsList(glycolsAndGlycolEthers10percent)}}
+
+  <h2 class='govuk-heading-s'>
+    Hydrocarbon solvents
+  </h2>
+  <p class='govuk-!-margin-bottom-1'>
+    Above 5% w/w:
+  </p>
+  {{ ingredientsList(hydrocarbonSolvents)}}
+
+
+  <h2 class='govuk-heading-s'>
+    Other
+  </h2>
+  <p class='govuk-!-margin-bottom-1'>
+    Any amount of:
+  </p>
+  {{ ingredientsList(otherAnyAmount) }}
+  <p class='govuk-!-margin-bottom-1'>
+    Above 0.1% w/w:
+  </p>
+  {{ ingredientsList(otherPoint1percent) }}
+  <p class='govuk-!-margin-bottom-1'>
+    Above 0.2% w/w or 0.09 grams:
+  </p>
+  {{ ingredientsList(otherPoint2percent) }}
+  <p class='govuk-!-margin-bottom-1'>
+    Above 0.5% w/w:
+  </p>
+  {{ ingredientsList(otherPoint5percent) }}
+  <p class='govuk-!-margin-bottom-1'>
+    Above 1% w/w:
+  </p>
+  {{ ingredientsList(other1percent) }}
+  <p class='govuk-!-margin-bottom-1'>
+    Above 5% w/w:
+  </p>
+  {{ ingredientsList(other5percent) }}
+  <h2 class='govuk-heading-s'>
+    Any ingredients classified as
+  </h2>
+  {{ ingredientsList(others) }}
+{% endset %}
+
+
+
+{% macro singleItem(errorState=false) %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate>
+      {% set errorMessage = 'Select yes if the product contains poisonous ingredients' %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: errorMessage,
+            href: "#passport-issued-error"
+          }
+        ]
+      }) if errorState }}
+      <h1 class='govuk-heading-xl'>
+        Poisonous ingredients
+      </h1>
+      <p>
+        To treat anyone who may be poisoned by the product, National Poison Information Services need the exact quantities (% w/w) of the most harmful ingredients.
+      </p>
+
+      {# {{ tableBlock | safe }} #}
+      {{ bulletBlock | safe }}
+
+
+
+{# [ { text: '1%' }, { text: 'Buteth-2 acetate '}, { text: '124-17-4' } ]
+[ { text: '1%' }, { text: 'Butoxydiglycol '}, { text: '112-34-5' } ]
+[ { text: '1%' }, { text: 'Butoxyethanol'}, { text: '111-76-2' } ]
+[ { text: '1%' }, { text: 'Butoxyethyl acetate'}, { text: '112-07-02' } ]
+[ { text: '1%' }, { text: 'Diethoxydiglycol '}, { text: '112-36-7' } ]
+[ { text: '1%' }, { text: 'Ethoxydiglycol '}, { text: '111-90-0' }  ]
+[ { text: '1%' }, { text: 'Ethoxydiglycol acetate '}, { text: '112-15-2' } ]
+[ { text: '1%' }, { text: 'Ethylene glycol only (also known as Glycol)'}, { text: '107-21-1' } ] #}
+
+{# 10% Dipropylene glycol  110-98-5 / 25265-71-8 
+10% Dipropylene glycol dimethyl ether 111109-77-4 
+10% Isobornyl dipropylene glycol ethers 958872-63-4 
+10% Methoxyisopropanol  107-98-2 
+10% Methoxyisopropyl acetate  108-65-6 
+10% PPG-2 methyl ether  13429-07-7 / 34590-94-8
+10% PPG-2 methyl ether acetate  88917-22-0 
+10% Propylene glycol  57-55-6
+10% Propylene glycol butyl ether  5131-66-8 #}
+
+
+
+
+
+
+{# 1%  Glycol ethers (not polymers)  Group #}
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset: {
+          legend: {
+            text: "Does the product contain any poisonous ingredients?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        errorMessage: {
+          text: errorMessage
+        } if errorState,
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+    </form>
+  </div>
+</div>
+{% endmacro %}
+
+
+{% block content %}
+  {{singleItem()}}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+ {{singleItem(errorState=true)}}
+{% endblock %}

@@ -1,7 +1,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="/form-handler" method="post" novalidate>
-      {% set errorMessage = "Select yes if the product intended for children under 3" %}
+      {% set errorMessage = "Select yes if the product is intended for children under 3" %}
       {% if errorState %}
         {{ govukErrorSummary({
           titleText: "There is a problem",
