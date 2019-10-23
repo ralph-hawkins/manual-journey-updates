@@ -87,7 +87,7 @@
 ]%}
 
 {% set alcoholAnyAmount = [
-  [ "Ethanol" ],
+  [ "Ethanol", "64-17-5" ],
   [ "Alcohol", "64-17-5"],
   [ "Alcohol denatured"],
   [ "Isopropanol", "67-63-0" ]
@@ -146,10 +146,10 @@
   [ "Camphor", "464-49-3 or 76-22-2 " ]
 ]%}
 
-{% set essentialOilsPoint5percent = [
+{# {% set essentialOilsPoint5percent = [
   [ "any individual essential oil" ],
   [ "total amount of essential oils" ]
-]%}
+]%} #}
 
 {% set others = [
   [ "Alkaline agents (including ammonium hydroxide liberators)" ],
@@ -184,10 +184,11 @@
     Above 0.15% w/w:
   </p>
   {{ ingredientsList(essentialOilsPoint15percent)}}
-  <p class='govuk-!-margin-bottom-1'>
+  {# <p class='govuk-!-margin-bottom-1'>
     Above 0.5% w/w:
   </p>
-  {{ ingredientsList(essentialOilsPoint5percent)}}
+  {{ ingredientsList(essentialOilsPoint5percent)}} #}
+  <p>Any idividual essential oil above 0.5% (w/w) or if the total amount of essential oils is above 0.5% (w/w)</p>
 
   <h2 class='govuk-heading-s'>
     Glycols and glycol ethers

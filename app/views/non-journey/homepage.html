@@ -1,0 +1,61 @@
+{% extends "./homepage-layout.html" %}
+
+{% set showAppHeader = true %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class='govuk-body-lead'>
+      All cosmetic products available to consumers in the UK must have Responsible Person and be notified in the UK.
+    </p>
+    <h2 class='govuk-heading-m'>
+      Responsible Persons
+    </h2>
+    <p class='govuk-!-margin-bottom-1'>
+      Every cosmetic product placed on the UK market must have a <span class='no-wrap'>Responsible Person (RP)</span>. The RP can be a business or a natural person. The RP must make sure:
+    </p>
+    <ul class='govuk-list govuk-list--bullet'>
+      <li>
+        cosmetic products placed on the market are safe for human health
+      </li>
+      <li>
+        each cosmetic product complies with <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32009R1223&from=EN" class="govuk-link--no-visited-state">Regulation 1223/2009</a>
+      </li>
+    </ul>
+    <h2 class='govuk-heading-m'>
+      Product notifications
+    </h2>
+    <p>
+      You need to submit a notification for each product availble to consumers. This includes products already notified on the EU Cosmetic Product Notification Portal (CPNP) before <span class="no-wrap">31 October 2019</span> (Brexit) and products placed on the market since.
+    </p>
+    <p>
+      You do not have to submit notifications for cosmetic products taken off the market in the UK before <span class="no-wrap">31 October 2019</span>.
+    </p>
+    <p>
+      <a href='smart-answers/do-you-have-eu-notification-file' class='govuk-link--no-visited-state'>
+        Find out how to submit a notification and what information you need to provide
+      </a>
+    </p>
+
+    <h2 class='govuk-heading-m'>
+      Non-compliance
+    </h2>
+    <p>
+      For products on the market before Brexit you must submit your notifications for these products by 11 pm GMT on <span class='no-wrap'>29 January 2020.</span>
+    </p> 
+    <p>
+      For new products you must submit a notification before placing the product on the market.
+    </p>
+    <p>
+      If you do not, you may face a penalty of up to £5,000 and a prison term of up to 3 months, or both. 
+    </p>
+  </div>
+</div>
+
+{% endblock %}
