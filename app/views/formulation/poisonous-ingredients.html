@@ -41,9 +41,8 @@
   }) }}
 {% endset %}
 
-
 {% macro ingredientsListLine(ingredient, casNumber) %}
-<li class=''>{{ingredient}} {% if casNumber %}<span class="govuk-hint casNumber">CAS {{casNumber}}</span>{% endif %}</li>
+  <li class=''>{{ingredient}} {% if casNumber %}<span class="govuk-hint casNumber">CAS {{casNumber}}</span>{% endif %}</li>
 {% endmacro %}
 
 {% macro ingredientsList(data) %}
@@ -210,7 +209,6 @@
   </p>
   {{ ingredientsList(hydrocarbonSolvents)}}
 
-
   <h2 class='govuk-heading-s'>
     Other
   </h2>
@@ -244,6 +242,10 @@
   {{ ingredientsList(others) }}
 {% endset %}
 
+{% set tableBlock %}
+  
+{% endset %}
+
 
 
 {% macro singleItem(errorState=false) %}
@@ -261,42 +263,45 @@
         ]
       }) if errorState }}
       <h1 class='govuk-heading-xl'>
-        Poisonous ingredients!
+        Poisonous ingredients
       </h1>
+      Poisonous ingredients {{ data.foo }}
+      {% for ingredientGroup in data.ingredientGroups %}
+        <h2>
+          {{ ingredientGroup.name }}
+        </h2>
+          {% for amountGroup in ingredientGroup.amountGroups %}
+          <p>
+            {{ amountGroup.amount }}
+          </p>
+          <ul>
+            {% for ingredient in amountGroup.ingredients %}
+            <li>{{ ingredient.name }} {% if ingredient.casNumber %} CAS {{ ingredient.casNumber }}{% endif %}</li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      {% endfor %}
+        ============
+
+
+{#       {% for object, item in data.poisonousIngredients %}
+        <h2 class="govuk-heading-m">{{object}}</h2>
+        <h2 class="govuk-heading-m">{{item.title}}</h2>
+        <ul>
+        {% for ingredient in item.data %}
+          {{ ingredient[0] }} CAS {{ ingredient[1] }}
+        {% endfor %}
+        </ul> #}
+
+
+
+      
       <p>
         To treat anyone who may be poisoned by the product, National Poison Information Services need the exact quantities (% w/w) of the most harmful ingredients.
       </p>
 
-      {# {{ tableBlock | safe }} #}
       {{ bulletBlock | safe }}
 
-
-
-{# [ { text: '1%' }, { text: 'Buteth-2 acetate '}, { text: '124-17-4' } ]
-[ { text: '1%' }, { text: 'Butoxydiglycol '}, { text: '112-34-5' } ]
-[ { text: '1%' }, { text: 'Butoxyethanol'}, { text: '111-76-2' } ]
-[ { text: '1%' }, { text: 'Butoxyethyl acetate'}, { text: '112-07-02' } ]
-[ { text: '1%' }, { text: 'Diethoxydiglycol '}, { text: '112-36-7' } ]
-[ { text: '1%' }, { text: 'Ethoxydiglycol '}, { text: '111-90-0' }  ]
-[ { text: '1%' }, { text: 'Ethoxydiglycol acetate '}, { text: '112-15-2' } ]
-[ { text: '1%' }, { text: 'Ethylene glycol only (also known as Glycol)'}, { text: '107-21-1' } ] #}
-
-{# 10% Dipropylene glycol  110-98-5 / 25265-71-8
-10% Dipropylene glycol dimethyl ether 111109-77-4
-10% Isobornyl dipropylene glycol ethers 958872-63-4
-10% Methoxyisopropanol  107-98-2
-10% Methoxyisopropyl acetate  108-65-6
-10% PPG-2 methyl ether  13429-07-7 / 34590-94-8
-10% PPG-2 methyl ether acetate  88917-22-0
-10% Propylene glycol  57-55-6
-10% Propylene glycol butyl ether  5131-66-8 #}
-
-
-
-
-
-
-{# 1%  Glycol ethers (not polymers)  Group #}
       {{ govukRadios({
         classes: "govuk-radios--inline",
         idPrefix: "changed-name",
@@ -326,7 +331,6 @@
   </div>
 </div>
 {% endmacro %}
-
 
 {% block content %}
   {{singleItem()}}
