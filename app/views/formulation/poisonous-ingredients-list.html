@@ -1,0 +1,96 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    url: '/poisonous-ingredients',
+    pageTitle: 'Poisonous ingredients',
+    postBrexit: 'Yes'
+    }) }}
+{% endblock %}
+
+{% macro singleItem(errorState=false) %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/form-handler" method="post" novalidate>
+      {% set errorMessage = 'Select yes if the product contains poisonous ingredients' %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: errorMessage,
+            href: "#passport-issued-error"
+          }
+        ]
+      }) if errorState }}
+      <h1 class='govuk-heading-xl'>
+        Poisonous ingredients
+      </h1>
+
+      <p>
+        To treat anyone who may be poisoned by the product, National Poison Information Services need the exact quantities (% w/w) of the most harmful ingredients.
+      </p>
+
+      <div class='govuk-!-margin-bottom-6'>
+        {% for ingredientGroup in data.ingredientGroups %}
+          <h2 class='govuk-heading-s govuk-!-margin-bottom-2'>
+            {{ ingredientGroup.name }}
+          </h2>
+            {% for amountGroup in ingredientGroup.amountGroups %}
+            <p class='govuk-!-margin-bottom-1'>
+              {{ amountGroup.amount }}
+            </p>
+            <ul class='govuk-list govuk-list--bullet'>
+              {% for ingredient in amountGroup.ingredients %}
+              <li>{{ ingredient.name | safe }} {% if ingredient.casNumber %} <span class='govuk-hint casNumber'>CAS {{ ingredient.casNumber | safe }}</span>{% endif %}</li>
+              {% endfor %}
+            </ul>
+          {% endfor %}
+        {% endfor %}
+      </div>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset: {
+          legend: {
+            text: "Does the product contain any poisonous ingredients?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        errorMessage: {
+          text: errorMessage
+        } if errorState,
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endmacro %}
+
+{% block content %}
+  {{singleItem()}}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+ {{singleItem(errorState=true)}}
+{% endblock %}

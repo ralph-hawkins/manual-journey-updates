@@ -1,0 +1,111 @@
+{% macro poisonData %}
+  {% set alcoholAnyAmount = [
+    [ "Ethanol", "64-17-5" ],
+    [ "Alcohol", "64-17-5"],
+    [ "Alcohol denatured"],
+    [ "Isopropanol", "67-63-0" ]
+  ]%}
+
+  {% set alcohol1percent = [
+    [ "n-Butyl alcohol", "71-36-3" ],
+    [ "n-Propyl alcohol (also known as Propyl alcohol)", "71-23-8 " ],
+    [ "t-Butyl alcohol", "75-65-0 " ]
+  ]%}
+
+  {% set essentialOilsPoint15percent = [
+    [ "Camphor", "464-49-3 or 76-22-2 " ]
+  ]%}
+
+  {% set essentialOilsPoint15percent = [
+    [ "Camphor", "464-49-3 or 76-22-2 " ]
+  ]%}
+  
+  {% set glycolsAndGlycolEthers1percent = [
+    ["Buteth-2 acetate",  "124-17-4"],
+    ["Butoxydiglycol",  "112-34-5"],
+    ["Butoxyethanol", "111-76-2"],
+    ["Butoxyethyl acetate", "112-07-02"],
+    ["Diethoxydiglycol", "112-36-7"],
+    ["Ethoxydiglycol",  "111-90-0"],
+    ["Ethoxydiglycol acetate",  "112-15-2"],
+    ["Ethylene glycol only (also known as Glycol)", "107-21-1"]
+  ]%}
+
+  {% set glycolsAndGlycolEthers10percent = [
+    ["Dipropylene glycol", "110-98-5, 25265-71-8" ],
+    ["Dipropylene glycol dimethyl ether", "111109-77-4" ],
+    ["Isobornyl dipropylene glycol ethers", "958872-63-4" ],
+    ["Methoxyisopropanol", "107-98-2" ],
+    ["Methoxyisopropyl acetate", "108-65-6" ],
+    ["PPG-2 methyl ether", "13429-07-7, 34590-94-8" ],
+    ["PPG-2 methyl ether acetate", "88917-22-0" ],
+    ["Propylene glycol", "57-55-6"],
+    ["Propylene glycol butyl ether", "5131-66-8" ]
+  ]%}
+
+  {% set hydrocarbonSolvents = [
+    [ "Cyclohexane", "110-82-7"],
+    [ "Hydrogenated didodecene", "151006-61-0"],
+    [ "Isopentane ", "78-78-4"],
+    [ "Pentane", "109-66-0"],
+    [ "Toluene", "108-88-3"],
+    [ "Turpentine",  "8006-64-2, 9005-90-7, 8052-14-0"]
+  ]%}
+
+
+  {% set otherAnyAmount = [
+   [ " Brucine Sulfate ", "  4845-99-2 " ]
+  ]%}
+
+  {% set otherPoint1percent = [
+    [ "Butyrolactone", "  96-48-0" ],
+    [ "Chloroplatinic acid", "16941-12-1" ],
+    [ "Copper sulphate", "  7758-98-7" ],
+    [ "Dimethyltolylamine", "99-97-8" ],
+    [ "Methyl acetate", "79-20-9" ],
+    [ "Potassium chlorate", "3811-04-9" ],
+    [ "Sodium chlorate", "7775-09-9" ],
+    [ "Triethyl phosphate", "78-40-0" ],
+    [ "m-Cresol", "108-39-4" ],
+    [ "o-Cresol", "95-48-7" ],
+    [ "p-Cresol", "106-44-5" ],
+    [ "Mixed Cresols", "1319-77-3" ]
+  ]%}
+
+  {% set otherPoint2percent = [
+    [ "Vitamin A or any of its derivatives (calculated as Retinol)", "68-26-8 or 11103-57-4" ]
+  ]%}
+
+  {% set otherPoint5percent = [
+    [ "Xanthine derivatives (for example, caffeine, theophylline, theobromine, plant extracts containing xanthine derivatives e.g. paulinia cupana (guarana) extracts or powders)" ]
+  ]%}
+
+  {% set other1percent = [
+    [ " Butyl acetate ", "  123-86-4  " ],
+    [ " Ethyl acetate ", "  141-78-6  " ]
+  ]%}
+
+  {% set other5percent = [
+    [ " Cyclohexanone ", "  108-94-1  " ],
+    [ " Ethyl ether ", "  60-29-7 " ],
+    [ " MEK (also known as Butanone)  ", "  78-93-3 " ],
+    [ " MIBK (also known as Methyl isobutyl ketone) ", "  108-10-1  " ]
+  ]%}
+
+
+  {# {% set essentialOilsPoint5percent = [
+    [ "any individual essential oil" ],
+    [ "total amount of essential oils" ]
+  ]%} #}
+
+  {% set others = [
+    [ "Alkaline agents (including ammonium hydroxide liberators)" ],
+    [ "Anti-dandruff agents" ],
+    [ "Anti-hair loss agents" ],
+    [ "Anti-pigmenting and depigmenting agents" ],
+    [ "Cationic surfactants with 3 or 4 chains or groups with a length shorter than Carbon 12 (including straight, branched, cyclic or aromatic groups) if the surfactant is for non-preservative purposes" ],
+    [ "Chemical exfoliating agents" ],
+    [ "Compounds that release hydrogen peroxide" ],
+    [ "Fluoride compound (calculated as fluorine)" ]
+  ]%}
+{% endblock %}
