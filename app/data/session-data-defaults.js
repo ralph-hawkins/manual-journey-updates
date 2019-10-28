@@ -27,11 +27,6 @@ module.exports = {
         [
           {
             "amount": "Any", 
-            "name": "Alcohol", 
-            "casNumber": "64&#8209;17&#8209;5"
-          },
-          {
-            "amount": "Any", 
             "name": "Alcohol denatured"
           },
           {
@@ -92,13 +87,13 @@ module.exports = {
         "ingredients": 
         [
           {
+            "amount": "More than 0.5%&nbsp;w/w", 
+            "name": "Essential oils"
+          },
+          {
             "amount": "More than 0.15%&nbsp;w/w", 
             "name": "Camphor", 
             "casNumber": "464&#8209;49&#8209;3, 76&#8209;22&#8209;2"
-          },
-          {
-            "amount": "More than 0.5%&nbsp;w/w", 
-            "name": "Essential oils"
           },
           {
             "amount": "More than 0.5%&nbsp;w/w", 
@@ -249,8 +244,13 @@ module.exports = {
         [
           {
             "amount": "Any", 
-            "name": "Brucine Sulfate", 
+            "name": "Brucine sulfate", 
             "casNumber": "4845&#8209;99&#8209;2"
+          },
+          {
+            "amount": "More than 5%&nbsp;w/w", 
+            "name": "Butanone (also known as MEK)  ", 
+            "casNumber":"  78&#8209;93&#8209;3" 
           },
           {
             "amount": "More than 1%&nbsp;w/w", 
@@ -293,11 +293,6 @@ module.exports = {
             "casNumber":"  60&#8209;29&#8209;7" 
           },
           {
-            "amount": "More than 5%&nbsp;w/w", 
-            "name": "MEK (also known as Butanone)  ", 
-            "casNumber":"  78&#8209;93&#8209;3" 
-          },
-          {
             "amount": "More than 0.1%&nbsp;w/w", 
             "name": "Methyl acetate", 
             "casNumber": "79&#8209;20&#8209;9"
@@ -323,7 +318,7 @@ module.exports = {
             "casNumber": "78&#8209;40&#8209;0"
           },
           {
-            "amount": "More than 0.2%&nbsp;w/w or 0.09 grams", 
+            "amount": "More than 0.2%&nbsp;w/w or 0.09&nbsp;grams", 
             "name": "Vitamin A or any of its derivatives (calculated as Retinol)", 
             "casNumber": "68&#8209;26&#8209;8, 11103&#8209;57&#8209;4" 
           },
