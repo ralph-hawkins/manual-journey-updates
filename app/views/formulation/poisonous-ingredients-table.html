@@ -18,7 +18,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="/form-handler" method="post" novalidate>
-      {% set errorMessage = 'Select yes if the product contains poisonous ingredients' %}
+      {% set errorMessage = 'Select yes if the product contains any of these ingredients' %}
       {{ govukErrorSummary({
         titleText: "There is a problem",
         errorList: [
@@ -29,62 +29,75 @@
         ]
       }) if errorState }}
       <h1 class='govuk-heading-xl'>
-        Poisonous ingredients
+        Ingredients you need to tell us about
       </h1>
 
       <p>
-        To treat anyone who may be poisoned by the product, National Poison Information Services need the exact quantities (% w/w) of the most harmful ingredients.
+        To treat anyone who may be poisoned by the product, National Poison Information Services need the exact quantities (% w/w) of the ingredients listed here.
       </p>
 
-      <div class='govuk-!-margin-bottom-6'>
-        
+      <div class='govuk-!-margin-bottom-9'>
         
         {% for ingredientGroup in data.ingredientGroups %}
-        <div class='govuk-!-margin-bottom-4'>
-          <h2 class='govuk-heading-l'>
+        <div class='govuk-!-margin-bottom-9'>
+          <h2 class='govuk-heading-m govuk-!-margin-bottom-1'>
             {{ ingredientGroup.name }}
           </h2>
-          {% for amountGroup in ingredientGroup.amountGroups %}
 
-            {% if amountGroup.ingredients %}
-              {% set ingredientRows = [] %}
-              {% for ingredient in amountGroup.ingredients %}
-                {% set ingredientRow = [{
+            {% set ingredientRows = [] %}
+            {% set tableHead = false %}
+
+            {# Compile array for table macro #}
+            {% for ingredient in ingredientGroup.ingredients %}
+
+              {# Check if first row has ingredient amounts #}
+              {% if loop.first and ingredient.amount %}
+                {% set tableHead = [
+                  {
+                    text: "Name",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  {
+                    text: "CAS Number",
+                    classes: 'govuk-!-width-one-quarter'
+                  },
+                  {
+                    text: "Amount",
+                    classes: 'govuk-!-width-one-quarter'
+                  }
+                ]%}
+              {% endif %}
+
+              {# Create ingredients array #}
+              {% if ingredient.amount %}
+                {% set ingredientRow = [
+                  {
                     html: ingredient.name
                   },{
-                    html: ingredient.casNumber or "–",
-                    format: "numeric"
+                    html: ingredient.casNumber or "–"
+                  },{
+                    html: ingredient.amount
                   }] %}
                 {% set ingredientRows = (ingredientRows.push(ingredientRow), ingredientRows) %}
-              {% endfor %}
-            {% endif %}
-
-
-
+              {% else %}
+                {% set ingredientRow = [
+                  {
+                    html: ingredient.name
+                  }
+                ] %}
+                {% set ingredientRows = (ingredientRows.push(ingredientRow), ingredientRows) %}
+              {% endif %}
+            {% endfor %}
 
             {{ govukTable({
-              caption: amountGroup.amount,
-              captionClasses: "govuk-heading-m govuk-!-margin-bottom-1",
-              head: [
-                {
-                  text: "Ingredient",
-                  classes: 'govuk-!-width-two-thirds'
-                },
-                {
-                  text: "CAS Number",
-                  format: "numeric",
-                  classes: 'govuk-!-width-one-third'
-                }
-              ],
+              head: tableHead,
               rows: ingredientRows
             }) }}
             {% if ingredientGroup.note %}
-              <p>
+              <p class='govuk-!-margin-bottom-9'>
                 {{ ingredientGroup.note }}
               </p>
             {% endif %}
-
-          {% endfor %}
         </div>
         {% endfor %}
       </div>
@@ -95,7 +108,7 @@
         name: "changed-name",
         fieldset: {
           legend: {
-            text: "Does the product contain any poisonous ingredients?",
+            text: "Does the product contain any of these ingredients?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
