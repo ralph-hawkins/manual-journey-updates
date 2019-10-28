@@ -323,7 +323,7 @@ module.exports = {
             "casNumber": "78&#8209;40&#8209;0"
           },
           {
-            "amount": "0.2% or 0.09 grams", 
+            "amount": "More than 0.2%%&nbsp;w/w or 0.09 grams", 
             "name": "Vitamin A or any of its derivatives (calculated as Retinol)", 
             "casNumber": "68&#8209;26&#8209;8, 11103&#8209;57&#8209;4" 
           },
