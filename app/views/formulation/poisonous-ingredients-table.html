@@ -17,7 +17,6 @@
 {% macro singleItem(errorState=false) %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/form-handler" method="post" novalidate>
       {% set errorMessage = 'Select yes if the product contains any of these ingredients' %}
       {{ govukErrorSummary({
         titleText: "There is a problem",
@@ -33,10 +32,10 @@
       </h1>
 
       <p>
-        To treat anyone who may be poisoned by the product, National Poison Information Services need the exact quantities (% w/w) of the ingredients listed here.
+        To treat anyone who may be poisoned by the product, National Poison Information Services need the exact quantities % w/w of the ingredients listed here.
       </p>
-
-      <div class='govuk-!-margin-bottom-9'>
+      </div>
+      <div class='govuk-grid-column-full'>
         
         {% for ingredientGroup in data.ingredientGroups %}
         <div class='govuk-!-margin-bottom-9'>
@@ -101,7 +100,10 @@
         </div>
         {% endfor %}
       </div>
+      <div class="govuk-grid-column-two-thirds">
 
+
+      <form action="/form-handler" method="post" novalidate>
       {{ govukRadios({
         classes: "govuk-radios--inline",
         idPrefix: "changed-name",
