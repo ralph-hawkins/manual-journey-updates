@@ -27,7 +27,8 @@ module.exports = {
         [
           {
             "amount": "Any", 
-            "name": "Alcohol denatured"
+            "name": "Alcohol denatured",
+            "note": "TODO: Including substance used as denaturant? if not, include Methanol specifically"
           },
           {
             "amount": "Any", 
@@ -324,22 +325,146 @@ module.exports = {
           },
           {
             "amount": "More than 0.5%&nbsp;w/w", 
-            "name": "Xanthine derivatives (for example, caffeine, theophylline, theobromine, plant extracts containing xanthine derivatives e.g. paulinia cupana (guarana) extracts or powders)" 
-          },
+            "name": "Xanthine derivatives (for example, caffeine, theophylline, theobromine, plant extracts containing xanthine derivatives, for example, paulinia cupana (guarana) extracts or powders)" 
+          }
         ]
       },
       {
-        "name": "Other ingredients classified as", 
-        "ingredients": 
+        "name": "Other ingredients",
+        "groupTable": true,
+        "ingredients":
         [
           { "amount": "Any", "name": "Alkaline agents (including ammonium hydroxide liberators)" },
+          { "amount": "Any", "name": "Cationic surfactants with 3 or 4 chains or groups with a length shorter than Carbon 12 (including straight, branched, cyclic or aromatic groups) if the surfactant is for non&#8209;preservative purposes" },
+          { "amount": "Any", "name": "Compounds that release hydrogen peroxide" },
+          { "amount": "Any", "name": "Fluoride compound (calculated as fluorine)" }
+        ]
+      },
+      {
+        "name": "Any ingredients acting as",
+        "groupTable": true,
+        "ingredients": 
+        [
           { "amount": "Any", "name": "Anti&#8209;dandruff agents" },
           { "amount": "Any", "name": "Anti&#8209;hair loss agents" },
           { "amount": "Any", "name": "Anti&#8209;pigmenting and depigmenting agents" },
-          { "amount": "Any", "name": "Cationic surfactants with 3 or 4 chains or groups with a length shorter than Carbon 12 (including straight, branched, cyclic or aromatic groups) if the surfactant is for non&#8209;preservative purposes" },
-          { "amount": "Any", "name": "Chemical exfoliating agents" },
-          { "amount": "Any", "name": "Compounds that release hydrogen peroxide" },
-          { "amount": "Any", "name": "Fluoride compound (calculated as fluorine)" }
+          { "amount": "Any", "name": "Chemical exfoliating agents" }
+        ]
+      }
+    ],
+
+  "frameformulations": 
+    [
+     {
+      "categoryName": "Hair and scalp care products",
+      "categoryNumber": "10",
+     },
+     {
+      "categoryName": "Hair colouring products",
+      "categoryNumber": "11",
+      "formulations":
+      [
+        {
+          "name": "Hair colorant (permanent, oxidative type)",
+          "url": "hair-colorant-permanent-oxidative-type",
+          "subname": "Type 1: two components - colorant part",
+          "number": "11.4",
+          "relatedTo": "To be mixed immediately prior to use with oxidative part (11.8-2013 or 11.9-2013)",
+          "ingredientsAndLevel": 
+            [
+            {
+              "ingredient": "Anionic surfactants (for example, ammonium laureth sulfate)",
+              "maxLevel": "20"
+            },
+            {
+              "ingredient": "Non-ionic surfactants (for example, laureth-12, deceth-3)",
+              "maxLevel": "20"
+            },
+            {
+              "ingredient": "Amphoteric surfactants (for example, betaine derivatives)",
+              "maxLevel": "20"
+            },
+            {
+              "ingredient": "Emulsifying agents (for example, ethoxylated long chain alcohols)",
+              "maxLevel": "30"
+            },
+            {
+              "ingredient": "Soaps (for example, ammonium hydroxide/ethanolamine oleates)",
+              "maxLevel": "30"
+            },
+            {
+              "ingredient": "Thickeners (for example, carbomer, long chain alcohols)",
+              "maxLevel": "30"
+            },
+            {
+              "ingredient": "Solvents (for example, propylene glycol, glycerin)",
+              "maxLevel": "20"
+            },
+            {
+              "ingredient": "Ethanol and/or isopropanol (alcohol, alcohol denat., isopropyl alcohol)",
+              "maxLevel": "16"
+            }
+            ],
+          "ingredientsAndLevelsubGroup":
+            [
+              {
+                "subcategoryName": "Hair dyeing agents",
+                "subGroupIngredientsAndLevel":
+                [
+                  { 
+                    "ingredient": "Primary intermediates (for example, p-phenylenediamines such as p-phenylenediamine and toluene-2,5-diamine, p-aminophenols such as p-aminophenol and 4-amino-m-cresol, heterocyclic diamines such as 1-hydroxyethyl 4,5-diamino pyrazole sulfate)",
+                    "maxLevel": "6"
+                  },
+                  { 
+                    "ingredient": "Couplers (for example, m-aminophenols such as m-aminophenol and 4-amino-2-hydroxytoluene, m-phenylenediamines such as 2-amino-4-hydroxyethylamino-anisole, resorcinols such as resorcinol and 4-chlororesorcinol, pyridines such as 2,6-dihydroxy-3,4-dimethylpyridine, naphtols such as 1,5-naphthalenediol)",
+                    "maxLevel": "6"
+                  },
+                  { 
+                    "ingredient": "Directs (for example, HC red no. 3, 2-amino-6-chloro-4-nitrophenol, basic yellow 87)",
+                    "maxLevel": "6"
+                  },
+                  { 
+                    "ingredient": "Alkaline agents (for example, ammonium hydroxide*, ethanolamine)",
+                    "note": "Maximum concentration of ammonium hydroxide permitted is 6 %",
+                    "maxLevel": "10"
+                  },
+                  { 
+                    "ingredient": "Cationic surfactants (for example, dicetyldimonium chloride, PEG-2 oleamine)",
+                    "maxLevel": "5"
+                  },
+                  { 
+                    "ingredient": "Cationic polymers (for example, polyquaternium-6)",
+                    "maxLevel": "5"
+                  },
+                  { 
+                    "ingredient": "Additional ingredients (for example, hair conditioning agents, pearlescent agents)",
+                    "maxLevel": "5"
+                  },
+                  { 
+                    "ingredient": "Antioxidants, reducing agents (for example, ascorbic acid, sodium metabisulfite)",
+                    "maxLevel": "3"
+                  },
+                  { 
+                    "ingredient": "Parfum",
+                    "maxLevel": "2"
+                  },
+                  { 
+                    "ingredient": "Chelating agents (for example, EDTA)",
+                    "maxLevel": "1"
+                  },
+                  { 
+                    "ingredient": "Aqua to",
+                    "maxLevel": "100"
+                  }
+                ]
+              }
+            ],
+          "pHrules":
+            [
+              { "phRule": "pH value: 8 to 11.6" },
+              { "phRule": "pH value of the mixture with oxidative part: 6 to 11.6" }
+            ]
+          }
         ]
       }
     ]

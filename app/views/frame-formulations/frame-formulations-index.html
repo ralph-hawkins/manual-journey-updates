@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class='govuk-heading-xl'>
+        Frame formulations
+      </h1>
+
+      {% for frameFormulation in data.frameformulations %}
+
+        {% set rowHeadings = 
+          [
+            { text: frameFormulation.categoryName }
+          ]
+         %}
+
+        {# {{ frameFormulation.categoryName }} #}
+
+      {% endfor %}
+
+      {{ rowHeadings }}
+
+    </div>
+  </div>
+{% endblock %}
