@@ -371,38 +371,38 @@ module.exports = {
           "relatedTo": "To be mixed immediately prior to use with oxidative part (11.8-2013 or 11.9-2013)",
           "ingredientsAndLevel": 
             [
-            {
-              "ingredient": "Anionic surfactants (for example, ammonium laureth sulfate)",
-              "maxLevel": "20"
-            },
-            {
-              "ingredient": "Non-ionic surfactants (for example, laureth-12, deceth-3)",
-              "maxLevel": "20"
-            },
-            {
-              "ingredient": "Amphoteric surfactants (for example, betaine derivatives)",
-              "maxLevel": "20"
-            },
-            {
-              "ingredient": "Emulsifying agents (for example, ethoxylated long chain alcohols)",
-              "maxLevel": "30"
-            },
-            {
-              "ingredient": "Soaps (for example, ammonium hydroxide/ethanolamine oleates)",
-              "maxLevel": "30"
-            },
-            {
-              "ingredient": "Thickeners (for example, carbomer, long chain alcohols)",
-              "maxLevel": "30"
-            },
-            {
-              "ingredient": "Solvents (for example, propylene glycol, glycerin)",
-              "maxLevel": "20"
-            },
-            {
-              "ingredient": "Ethanol and/or isopropanol (alcohol, alcohol denat., isopropyl alcohol)",
-              "maxLevel": "16"
-            }
+              {
+                "ingredient": "Anionic surfactants (for example, ammonium laureth sulfate)",
+                "maxLevel": "20"
+              },
+              {
+                "ingredient": "Non-ionic surfactants (for example, laureth-12, deceth-3)",
+                "maxLevel": "20"
+              },
+              {
+                "ingredient": "Amphoteric surfactants (for example, betaine derivatives)",
+                "maxLevel": "20"
+              },
+              {
+                "ingredient": "Emulsifying agents (for example, ethoxylated long chain alcohols)",
+                "maxLevel": "30"
+              },
+              {
+                "ingredient": "Soaps (for example, ammonium hydroxide/ethanolamine oleates)",
+                "maxLevel": "30"
+              },
+              {
+                "ingredient": "Thickeners (for example, carbomer, long chain alcohols)",
+                "maxLevel": "30"
+              },
+              {
+                "ingredient": "Solvents (for example, propylene glycol, glycerin)",
+                "maxLevel": "20"
+              },
+              {
+                "ingredient": "Ethanol and/or isopropanol (alcohol, alcohol denat., isopropyl alcohol)",
+                "maxLevel": "16"
+              }
             ],
           "ingredientsAndLevelsubGroup":
             [
@@ -466,5 +466,39 @@ module.exports = {
           }
         ]
       }
+    ],
+
+    "annexes": 
+    [
+      { 
+        "annexName": "Colourants",
+        "annexNumber": "3",
+        "chemicals": 
+        [
+          {
+            "chemicalName": "Sodium tris(1,2-naphthoquinone 1-oximato-O,O')ferrate(1-)",
+            "colourIndex": "10006",
+            "CASnumber": "",
+            "ECnumber": "",
+            "colour": "Green",
+            "productType": "Rinse-off products",
+            "maxConcentration": "",
+            "other": "",
+            "conditions": ""
+          },
+          {
+            "chemicalName": "Trisodium tris[5,6-dihydro-5- (hydroxyimino)-6-oxonaphthalene-2-sulphonato(2-)- N5,O6]ferrate(3-)",
+            "colourIndex": "10020",
+            "CASnumber": "",
+            "ECnumber": "",
+            "colour": "Green",
+            "productType": "Not to be used in products applied on mucous membranes",
+            "maxConcentration": "",
+            "other": "",
+            "conditions": ""
+          }
+        ] 
+      }
     ]
+
   }

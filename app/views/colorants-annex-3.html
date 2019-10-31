@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class='govuk-heading-xl'>
+        List of {{ data.annexes[0].annexName }} permitted for use in cosmetic products
+      </h1>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Chemical name</th>
+            <th scope="col" class="govuk-table__header">Colour index Number/Name of Common Ingredients Glossary</th>
+            <th scope="col" class="govuk-table__header">CAS Number</th>
+            <th scope="col" class="govuk-table__header">EC Number</th>
+            <th scope="col" class="govuk-table__header">Colour</th>
+            <th scope="col" class="govuk-table__header">Product type, Body parts</th>
+            <th scope="col" class="govuk-table__header">Maximum concentration in ready for use preparation</th>
+            <th scope="col" class="govuk-table__header">Other</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for item in data.annexes %}
+            {% for chemical in item.chemicals %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ chemical.chemicalName }}</td>
+                <td class="govuk-table__cell">{{ chemical.colourIndex }}</td>
+                <td class="govuk-table__cell">{{ chemical.CASnumber }}</td>
+                <td class="govuk-table__cell">{{ chemical.ECnumber }}</td>
+                <td class="govuk-table__cell">{{ chemical.colour }}</td>
+                <td class="govuk-table__cell">{{ chemical.productType }}</td>
+                <td class="govuk-table__cell">{{ chemical.maxConcentration }}</td>
+                <td class="govuk-table__cell">{{ chemical.other }}</td>
+                <td class="govuk-table__cell">{{ chemical.conditions }}</td>
+              </tr>
+            {% endfor %}
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+{% endblock %}
