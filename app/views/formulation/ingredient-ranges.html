@@ -7,7 +7,7 @@
 
 {% block beforeContent %}
   {{ metaDetails.meta({
-    url: '/ingredients-for-npis',
+    url: '/ingredient ranges',
     pageTitle: 'Poisonous ingredients',
     postBrexit: 'Yes'
     }) }}
@@ -19,6 +19,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     {% set errorMessage = 'Select yes if the product contains any of these ingredients' %}
+
     {{ govukErrorSummary({
       titleText: "There is a problem",
       errorList: [
@@ -30,7 +31,7 @@
     }) if errorState }}
 
     <h1 class='govuk-heading-xl'>
-      Ingredients you need to tell us about 👻
+      Ingredient ranges
     </h1>
 
     <p>

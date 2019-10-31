@@ -1,0 +1,72 @@
+
+  <div class='govuk-grid-column-full'>
+    {% for ingredientGroup in data.ingredientGroups %}
+    <div class='govuk-!-margin-bottom-9'>
+      <h2 class='govuk-heading-m govuk-!-margin-bottom-1'>
+        {{ ingredientGroup.name }}
+      </h2>
+
+        {% set ingredientRows = [] %}
+        {% set tableHead = false %}
+
+        {# Compile array for table macro #}
+        {% for ingredient in ingredientGroup.ingredients %}
+
+          {# Create ingredients array #}
+          {% if ingredientGroup.groupTable %}
+            {% set tableHead = [
+                {
+                  text: "Name",
+                  classes: 'govuk-!-width-one-half'
+                },
+                {
+                  text: "Amount",
+                  classes: 'govuk-!-width-one-quarter'
+                }
+              ]%}
+            {% set ingredientRow = [
+              {
+                html: ingredient.name,
+                classes: 'govuk-!-width-three-quarters'
+              },
+              {
+                html: ingredient.amount,
+                classes: 'govuk-!-width-one-quarter'
+              }
+            ] %}
+            {% set ingredientRows = (ingredientRows.push(ingredientRow), ingredientRows) %}
+          {% else %}
+              {% set tableHead = [
+                {
+                  text: "Name",
+                  classes: 'govuk-!-width-one-half'
+                },
+                {
+                  text: "CAS Number",
+                  classes: 'govuk-!-width-one-quarter'
+                },
+                {
+                  text: "Amount",
+                  classes: 'govuk-!-width-one-quarter'
+                }
+              ]%}
+            {% set ingredientRow = [
+              {
+                html: ingredient.name
+              },{
+                html: ingredient.casNumber or "–"
+              },{
+                html: ingredient.amount
+              }] %}
+            {% set ingredientRows = (ingredientRows.push(ingredientRow), ingredientRows) %}
+          {% endif %}
+        {% endfor %}
+
+        {{ govukTable({
+          head: tableHead,
+          rows: ingredientRows
+        }) }}
+    </div>
+    {% endfor %}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
