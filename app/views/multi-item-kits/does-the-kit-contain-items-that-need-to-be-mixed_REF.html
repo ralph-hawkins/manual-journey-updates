@@ -1,7 +1,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="/form-handler" method="post" novalidate>
-      {% set errorMessage = "Select if the kit contains items that need to be mixed" %}
+      {% set errorMessage = "Select yes if the kit contains items that need to be mixed" %}
       {% if errorState %}
         {{ govukErrorSummary({
           titleText: "There is a problem",
