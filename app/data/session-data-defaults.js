@@ -27,8 +27,7 @@ module.exports = {
         [
           {
             "amount": "Any", 
-            "name": "Alcohol denatured",
-            "note": "TODO: Including substance used as denaturant? if not, include Methanol specifically"
+            "name": "Alcohol denatured <br> Including any substances used to denature the alcohol",
           },
           {
             "amount": "Any", 
