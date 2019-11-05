@@ -1,7 +1,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="/form-handler" method="post" novalidate>
-      {% set errorMessage = "Select if product is available as a single item or as a multi-item kit" %}
+      {% set errorMessage = "Select if product is a single item or as a multi-item kit" %}
       {% if errorState %}
         {{ govukErrorSummary({
           titleText: "There is a problem",
@@ -14,7 +14,7 @@
         }) }}
       {% endif %}
       <h1 class='govuk-heading-xl'>
-        Multi-item kits
+        Single and multi-item kits
       </h1>
       <p>
         Multi-item kits are composed of items that are not marketed separately. They are sold as a kit and intended to be used as a mix or sequentially.
@@ -37,7 +37,7 @@
           name: "changed-name",
           fieldset: {
             legend: {
-              text: "Is the product available as a single item or as a multi-item kit?",
+              text: "Is the product a single item or as a multi-item kit?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
