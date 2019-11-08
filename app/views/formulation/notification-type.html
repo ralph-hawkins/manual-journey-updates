@@ -1,0 +1,107 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    url: '/ingredients',
+    pageTitle: 'Ingredients',
+    postBrexit: 'No'
+    }) }}
+{% endblock %}
+
+
+{% macro singleItem(errorState=false) %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set errorMessage = 'Select how you want to give the product ingredients' %}
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: errorMessage,
+          href: "#passport-issued-error"
+        }
+      ]
+    }) if errorState }}
+
+    <h1 class="govuk-heading-xl">
+      Ingredients
+    </h1>
+    <p>
+      There are 3 ways to give the ingredients of your products.
+    </p>
+    <h2 class="govuk-heading-m">
+      Frame formulation
+    </h2>
+    <p>
+      A ‘frame formulation’ lists the category or function of cosmetic ingredients and their maximum concentration. There are frame formulations to cover most cosmetic products. Choose the frame formulation that matches your product most closely from the list of frame formulations.
+    </p>
+    <p>
+      <a href='#'>
+        View frame formulations (opens in a new tab)
+      </a>
+    </p>
+    <p>
+      For products placed on the market after 31 January 2020 (Brexit), you also need to provide the exact concentration of any ingredients that The National Poison Information Service (NPIS) needs to know about as a separate document.
+    </p>
+    <h2 class="govuk-heading-m">
+      Concentration ranges
+    </h2>
+    <p>
+      List each ingredient and its concentration within a defined range (for example, ‘above 0.1% w/w up to 1% w/w’).
+    </p>
+    <p>
+      For products placed on the market after 31 January 2020, list any poisonous ingredients that NPIS needs to know about as exact concentrations. 
+    </p>
+    <h2 class="govuk-heading-m">
+      Exact concentration
+    </h2>
+    <p class='govuk-!-margin-bottom-9'>
+      List all ingredients and their exact concentration.
+    </p>
+
+    {{ govukRadios({
+      idPrefix: "where-do-you-live",
+      name: "where-do-you-live",
+      fieldset: {
+        legend: {
+          text: "How do you want to give the ingredients?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "england",
+          text: "Frame formulation"
+        },
+        {
+          value: "scotland",
+          text: "Concentration ranges"
+        },
+        {
+          value: "wales",
+          text: "Exact concentration"
+        }
+      ]
+    }) }}
+
+  </div>
+</div>
+{% endmacro %}
+
+{% block content %}
+  {{singleItem()}}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+ {{singleItem(errorState=true)}}
+{% endblock %}

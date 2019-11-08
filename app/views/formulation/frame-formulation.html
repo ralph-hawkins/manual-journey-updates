@@ -1,0 +1,50 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    url: '/ingredients',
+    pageTitle: 'Ingredients',
+    postBrexit: 'No'
+    }) }}
+{% endblock %}
+
+
+{% macro singleItem(errorState=false) %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set errorMessage = 'Nope' %}
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: errorMessage,
+          href: "#passport-issued-error"
+        }
+      ]
+    }) if errorState }}
+
+    <h1 class="govuk-heading-xl">
+      No idea 
+    </h1>
+
+  </div>
+</div>
+{% endmacro %}
+
+{% block content %}
+  {{singleItem()}}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+ {{singleItem(errorState=true)}}
+{% endblock %}

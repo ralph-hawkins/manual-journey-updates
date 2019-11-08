@@ -329,7 +329,7 @@ module.exports = {
         ]
       },
       {
-        "name": "Other ingredients",
+        "name": "Ingredient groups",
         "groupTable": true,
         "ingredients":
         [
@@ -491,7 +491,7 @@ module.exports = {
             "colourIndex": "10020",
             "CASnumber": "",
             "ECnumber": "",
-            "colour": "Green",
+            "colour": "Greenw",
             "productType": "Not to be used in products applied on mucous membranes",
             "maxConcentration": "",
             "other": "",

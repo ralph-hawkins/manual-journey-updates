@@ -37,8 +37,11 @@
       To treat anyone who may be poisoned by the product, National Poison Information Services need the exact quantities % w/w of the ingredients listed here.
     </p>
   </div>
-  
+
+  <div class="govuk-grid-column-full govuk-!-margin-bottom-9">
   {% include "../includes/poisonous-ingredients.html" %}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
 
   <form action="/form-handler" method="post" novalidate>
     {{ govukRadios({

@@ -1,7 +1,5 @@
 
-  <div class='govuk-grid-column-full'>
     {% for ingredientGroup in data.ingredientGroups %}
-    <div class='govuk-!-margin-bottom-9'>
       <h2 class='govuk-heading-m govuk-!-margin-bottom-1'>
         {{ ingredientGroup.name }}
       </h2>
@@ -66,7 +64,4 @@
           head: tableHead,
           rows: ingredientRows
         }) }}
-    </div>
     {% endfor %}
-  </div>
-  <div class="govuk-grid-column-two-thirds">
