@@ -31,32 +31,45 @@
     }) if errorState }}
 
     <h1 class='govuk-heading-xl'>
-      Exact concentration of ingredients
+      Exact concentrations of the ingredients
     </h1>
 
-    <p class='govuk-!-margin-bottom-1'>
-      For all ingredients give the:
+    <p class='govuk-!-margin-bottom-3'>To tell us about the exact concentrations of the ingredients, you'll need to upload a PDF which lists them.</p>
+
+    <p class='govuk-!-margin-bottom-3'>
+      For each ingredient tell us the:
     </p>
     <ul class='govuk-list govuk-list--bullet'>
-      <li>ingredient name using International Nomenclature of Cosmetic Ingredients (INCI) name</li>
+      <li>International Nomenclature of Cosmetic Ingredients (INCI) name</li>
       <li>Chemical Abstracts Service (CAS) number</li>
       <li>exact concentration as % w/w</li>
     </ul>
-    <p>
-      List the ingredients you need to tell NPIS about first, largest to smallest quantity.
-    </p>
+
+    <div class="govuk-inset-text">
+
+    <p class='govuk-!-margin-bottom-3'>The National Poison Information Service (NPIS) needs to know about some ingredients in the product – list these first.</p>
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Ingredients NPIS needs to know about
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          {% include "../includes/poisonous-ingredients.html" %}
+        </div>
+      </details>
+
+    </div>
+
+
   </div>
+
+
+
   <div class="govuk-grid-column-full">
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Ingredients you need to tell NPIS about
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        {% include "../includes/poisonous-ingredients.html" %}
-      </div>
-    </details>
+
   </div>
   <div class="govuk-grid-column-two-thirds">
     <h3 class='govuk-heading-s'>
