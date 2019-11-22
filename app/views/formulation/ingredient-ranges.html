@@ -36,10 +36,21 @@
 
     <p class='govuk-!-margin-bottom-3'>To tell us about the concentration ranges of the ingredients, you'll need to upload a PDF which lists the ingredients.</p>
 
+    <h2 class='govuk-heading-m'>
+      What you'll need to tell us
+    </h2>
+
+    <p class='govuk-!-margin-bottom-2'>
+      For every ingredient in the product, you'll need to tell us the:
+    </p>
+
+    <ul class='govuk-list govuk-list--bullet'>
+      <li>International Nomenclature of Cosmetic Ingredients (INCI) name</li>
+      <li>Chemical Abstracts Service (CAS) number</li>
+    </ul>
 
     <div class="govuk-inset-text">
-
-    <p class='govuk-!-margin-bottom-3'>The National Poison Information Service (NPIS) needs to know about some ingredients in the product – list these first with the <strong>exact</strong> concentrations.</p>
+    <p class='govuk-!-margin-bottom-3'>The National Poison Information Service (NPIS) needs to know about some ingredients in the product – list these first with the <strong>exact</strong> concentrations, in order of the largest to the smallest.</p>
 
 
       <details class="govuk-details" data-module="govuk-details">
@@ -52,40 +63,23 @@
           {% include "../includes/poisonous-ingredients.html" %}
         </div>
       </details>
-
       </div>
 
-    <h2 class='govuk-heading-m'>
-      What you'll need to tell us about the ingredients
-    </h2>
+    <p class='govuk-!-margin-bottom-2'>For the other ingredients, list the ingredients in order of the largest concentration to the smallest.</p>
 
-    <p class='govuk-!-margin-bottom-2'>
-      For each ingredient in the product, you'll need to tell us the:
-    </p>
-
-    <ul class='govuk-list govuk-list--bullet'>
-      <li>International Nomenclature of Cosmetic Ingredients (INCI) name</li>
-      <li>Chemical Abstracts Service (CAS) number</li>
-      <li>concentration range (% w/w)</li>
-    </ul>
-
-    <div class="govuk-inset-text">
-    <p class='govuk-!-margin-bottom-2'>List the ingredients in order of the largest concentrations first.</p>
-    </div>
-    
       <h3 class='govuk-heading-s'>Concentration ranges</h3>
 
     <p class='govuk-!-margin-bottom-2'>Use these concentration ranges:</p>
 
     <ul class='govuk-list govuk-list--bullet'>
-      <li>up to and including 0.1% w/w</li>
-      <li>above 0.1% w/w up to 1% w/w</li>
-      <li>above 1% w/w up to 5% w/w</li>
-      <li>above 5% w/w up to 10% w/w</li>
-      <li>above 10% w/w up to 25% w/w</li>
-      <li>above 25% w/w up to 50% w/w</li>
-      <li>above 50% w/w up to 75% w/w</li>
       <li>above 75% w/w up to 100% w/w</li>
+      <li>above 50% w/w up to 75% w/w</li>
+      <li>above 25% w/w up to 50% w/w</li>
+      <li>above 10% w/w up to 25% w/w</li>
+      <li>above 5% w/w up to 10% w/w</li>
+      <li>above 1% w/w up to 5% w/w</li>
+      <li>above 0.1% w/w up to 1% w/w</li>
+      <li>up to and including 0.1% w/w</li>          
     </ul>
 
 
@@ -117,7 +111,7 @@
         </details>
 
       </div>
-      -->
+
 
   </div>
   <div class="govuk-grid-column-full">
@@ -136,6 +130,7 @@
     {% include '../includes/upload.html' %}
 
   </div>
+  -->
 </div>
 {% endmacro %}
 
