@@ -11,55 +11,29 @@
         Frame formulations
       </h1>
 
-      {% for frameFormulation in data.frameformulations %}
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        {% for type in data.frameformulations %}
+          <div class="govuk-accordion__section ">
 
-        {% set rowHeadings = 
-          [
-            { text: frameFormulation.categoryName }
-          ]
-         %}
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  {{ type.categoryName }}
+                </span>
+              </h2>
+            </div>
 
-        {# {{ frameFormulation.categoryName }} #}
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                <ol class='govuk-list'>
+            {% for formulation in type.formulations %}
+                  <li class='govuk-!-padding-bottom-1'><a href='{{ formulation.url }}'>{{ formulation.name }}</a></li>
+            {% endfor %}
+                </ol>
+              </div>
 
-      {% endfor %}
-
-      {{ govukAccordion({
-        id: "accordion-default",
-        items: [
-          {
-            heading: {
-              text: "Writing well for the web"
-            },
-            content: {
-              html: "<p class='govuk-body'>This is the content for Writing well for the web.</p>"
-            }
-          },
-          {
-            heading: {
-              text: "Writing well for specialists"
-            },
-            content: {
-              html: "<p class='govuk-body'>This is the content for Writing well for specialists.</p>"
-            }
-          },
-            {
-            heading: {
-              text: "Know your audience"
-            },
-            content: {
-              html: "<p class='govuk-body'>This is the content for Know your audience.</p>"
-            }
-          },
-            {
-            heading: {
-              text: "How people read"
-            },
-            content: {
-              html: "<p class='govuk-body'>This is the content for How people read.</p>"
-            }
-          }
-        ]
-      }) }}
+          </div>
+        {% endfor %}
+      </div>
 
     </div>
   </div>

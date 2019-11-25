@@ -354,119 +354,244 @@ module.exports = {
 
   "frameformulations": 
     [
-     {
-      "categoryName": "Hair and scalp care products",
-      "categoryNumber": "10",
-     },
-     {
-      "categoryName": "Hair colouring products",
-      "categoryNumber": "11",
-      "formulations":
-      [
-        {
-          "name": "Hair colorant (permanent, oxidative type)",
-          "url": "hair-colorant-permanent-oxidative-type",
-          "subname": "Type 1: two components - colorant part",
-          "number": "11.4",
-          "relatedTo": "To be mixed immediately prior to use with oxidative part (11.8-2013 or 11.9-2013)",
-          "ingredientsAndLevel": 
-            [
-              {
-                "ingredient": "Anionic surfactants (for example, ammonium laureth sulfate)",
-                "maxLevel": "20"
-              },
-              {
-                "ingredient": "Non-ionic surfactants (for example, laureth-12, deceth-3)",
-                "maxLevel": "20"
-              },
-              {
-                "ingredient": "Amphoteric surfactants (for example, betaine derivatives)",
-                "maxLevel": "20"
-              },
-              {
-                "ingredient": "Emulsifying agents (for example, ethoxylated long chain alcohols)",
-                "maxLevel": "30"
-              },
-              {
-                "ingredient": "Soaps (for example, ammonium hydroxide/ethanolamine oleates)",
-                "maxLevel": "30"
-              },
-              {
-                "ingredient": "Thickeners (for example, carbomer, long chain alcohols)",
-                "maxLevel": "30"
-              },
-              {
-                "ingredient": "Solvents (for example, propylene glycol, glycerin)",
-                "maxLevel": "20"
-              },
-              {
-                "ingredient": "Ethanol and/or isopropanol (alcohol, alcohol denat., isopropyl alcohol)",
-                "maxLevel": "16"
-              }
-            ],
-          "ingredientsAndLevelsubGroup":
-            [
-              {
-                "subcategoryName": "Hair dyeing agents",
-                "subGroupIngredientsAndLevel":
-                [
-                  { 
-                    "ingredient": "Primary intermediates (for example, p-phenylenediamines such as p-phenylenediamine and toluene-2,5-diamine, p-aminophenols such as p-aminophenol and 4-amino-m-cresol, heterocyclic diamines such as 1-hydroxyethyl 4,5-diamino pyrazole sulfate)",
-                    "maxLevel": "6"
-                  },
-                  { 
-                    "ingredient": "Couplers (for example, m-aminophenols such as m-aminophenol and 4-amino-2-hydroxytoluene, m-phenylenediamines such as 2-amino-4-hydroxyethylamino-anisole, resorcinols such as resorcinol and 4-chlororesorcinol, pyridines such as 2,6-dihydroxy-3,4-dimethylpyridine, naphtols such as 1,5-naphthalenediol)",
-                    "maxLevel": "6"
-                  },
-                  { 
-                    "ingredient": "Directs (for example, HC red no. 3, 2-amino-6-chloro-4-nitrophenol, basic yellow 87)",
-                    "maxLevel": "6"
-                  },
-                  { 
-                    "ingredient": "Alkaline agents (for example, ammonium hydroxide*, ethanolamine)",
-                    "note": "Maximum concentration of ammonium hydroxide permitted is 6 %",
-                    "maxLevel": "10"
-                  },
-                  { 
-                    "ingredient": "Cationic surfactants (for example, dicetyldimonium chloride, PEG-2 oleamine)",
-                    "maxLevel": "5"
-                  },
-                  { 
-                    "ingredient": "Cationic polymers (for example, polyquaternium-6)",
-                    "maxLevel": "5"
-                  },
-                  { 
-                    "ingredient": "Additional ingredients (for example, hair conditioning agents, pearlescent agents)",
-                    "maxLevel": "5"
-                  },
-                  { 
-                    "ingredient": "Antioxidants, reducing agents (for example, ascorbic acid, sodium metabisulfite)",
-                    "maxLevel": "3"
-                  },
-                  { 
-                    "ingredient": "Parfum",
-                    "maxLevel": "2"
-                  },
-                  { 
-                    "ingredient": "Chelating agents (for example, EDTA)",
-                    "maxLevel": "1"
-                  },
-                  { 
-                    "ingredient": "Aqua to",
-                    "maxLevel": "100"
-                  }
-                ]
-              }
-            ],
-          "pHrules":
-            [
-              { "phRule": "pH value: 8 to 11.6" },
-              { "phRule": "pH value of the mixture with oxidative part: 6 to 11.6" }
+      { 
+        "categoryName" : "Skin care",
+        "formulations" : [
+          { "name" : "Item" },
+          { "name" : "Item" }
+          ]
+      },
+      { 
+        "categoryName" : "Skin cleansing",
+        "formulations" : [
+          { "name" : "Item" },
+          { "name" : "Item" }
+          ]
+      },
+      { 
+        "categoryName" : "Hair removal",
+        "formulations" : [
+          { "name" : "Item" },
+          { "name" : "Item" }
+          ]
+      },
+      { 
+        "categoryName" : "Bleach for body hair",
+        "formulations" : [
+          { "name" : "Item" },
+          { "name" : "Item" }
+          ]
+      },
+      { 
+        "categoryName" : "Correction of body odour and or perspiration",
+        "formulations" : [
+          { "name" : "Item" },
+          { "name" : "Item" }
+          ]
+      },
+      { 
+        "categoryName" : "Shaving products",
+        "formulations" : [
+          { "name" : "Item" },
+          { "name" : "Item" }
+          ]
+      },
+      { 
+        "categoryName" : "Make up",
+        "formulations" : [
+          { "name" : "Item" },
+          { "name" : "Item" }
+          ]
+      },
+      { 
+        "categoryName" : "Perfumes",
+        "formulations" : [
+          { "name" : "Item" },
+          { "name" : "Item" }
+          ]
+      },
+      { 
+        "categoryName" : "Sun products and self tanning products",
+        "formulations" : [
+          { "name" : "Item" },
+          { "name" : "Item" }
+          ]
+      },
+      { 
+        "categoryName" : "Hair and scalp care products",
+        "formulations" : [
+          { "name" : "Item" },
+          { "name" : "Item" }
+          ]
+      },
+      {
+        "categoryName": "Hair colouring products",
+        "categoryNumber": "11",
+        "formulations":
+        [
+          { "name" : "Hair colourant temporary shampoo",
+            "number" : "11.1"
+          },
+          { "name" : "Hair colourant temporary foam lotion",
+            "number" : "11.2"
+          },
+          { "name" : "Hair colourant temporary or semi permanent liquid cream foam",
+            "number" : "11.3"
+          },
+          {
+            "name": "Hair colourant (permanent, oxidative type)",
+            "url": "11-4-hair-colourant-permanent-oxidative-type",
+            "subname": "Type 1: two components - colourant part",
+            "number": "11.4",
+            "relatedTo": "To be mixed immediately prior to use with oxidative part (11.8-2013 or 11.9-2013)",
+            "ingredientsAndLevel": 
+              [
+                {
+                  "ingredient": "Anionic surfactants (for example, ammonium laureth sulfate)",
+                  "maxLevel": "20"
+                },
+                {
+                  "ingredient": "Non-ionic surfactants (for example, laureth-12, deceth-3)",
+                  "maxLevel": "20"
+                },
+                {
+                  "ingredient": "Amphoteric surfactants (for example, betaine derivatives)",
+                  "maxLevel": "20"
+                },
+                {
+                  "ingredient": "Emulsifying agents (for example, ethoxylated long chain alcohols)",
+                  "maxLevel": "30"
+                },
+                {
+                  "ingredient": "Soaps (for example, ammonium hydroxide/ethanolamine oleates)",
+                  "maxLevel": "30"
+                },
+                {
+                  "ingredient": "Thickeners (for example, carbomer, long chain alcohols)",
+                  "maxLevel": "30"
+                },
+                {
+                  "ingredient": "Solvents (for example, propylene glycol, glycerin)",
+                  "maxLevel": "20"
+                },
+                {
+                  "ingredient": "Ethanol and/or isopropanol (alcohol, alcohol denat., isopropyl alcohol)",
+                  "maxLevel": "16"
+                }
+              ],
+            "ingredientsAndLevelsubGroup":
+              [
+                {
+                  "subcategoryName": "Hair dyeing agents",
+                  "subGroupIngredientsAndLevel":
+                  [
+                    { 
+                      "ingredient": "Primary intermediates (for example, p-phenylenediamines such as p-phenylenediamine and toluene-2,5-diamine, p-aminophenols such as p-aminophenol and 4-amino-m-cresol, heterocyclic diamines such as 1-hydroxyethyl 4,5-diamino pyrazole sulfate)",
+                      "maxLevel": "6"
+                    },
+                    { 
+                      "ingredient": "Couplers (for example, m-aminophenols such as m-aminophenol and 4-amino-2-hydroxytoluene, m-phenylenediamines such as 2-amino-4-hydroxyethylamino-anisole, resorcinols such as resorcinol and 4-chlororesorcinol, pyridines such as 2,6-dihydroxy-3,4-dimethylpyridine, naphtols such as 1,5-naphthalenediol)",
+                      "maxLevel": "6"
+                    },
+                    { 
+                      "ingredient": "Directs (for example, HC red no. 3, 2-amino-6-chloro-4-nitrophenol, basic yellow 87)",
+                      "maxLevel": "6"
+                    },
+                    { 
+                      "ingredient": "Alkaline agents (for example, ammonium hydroxide*, ethanolamine)",
+                      "note": "Maximum concentration of ammonium hydroxide permitted is 6 %",
+                      "maxLevel": "10"
+                    },
+                    { 
+                      "ingredient": "Cationic surfactants (for example, dicetyldimonium chloride, PEG-2 oleamine)",
+                      "maxLevel": "5"
+                    },
+                    { 
+                      "ingredient": "Cationic polymers (for example, polyquaternium-6)",
+                      "maxLevel": "5"
+                    },
+                    { 
+                      "ingredient": "Additional ingredients (for example, hair conditioning agents, pearlescent agents)",
+                      "maxLevel": "5"
+                    },
+                    { 
+                      "ingredient": "Antioxidants, reducing agents (for example, ascorbic acid, sodium metabisulfite)",
+                      "maxLevel": "3"
+                    },
+                    { 
+                      "ingredient": "Parfum",
+                      "maxLevel": "2"
+                    },
+                    { 
+                      "ingredient": "Chelating agents (for example, EDTA)",
+                      "maxLevel": "1"
+                    },
+                    { 
+                      "ingredient": "Aqua to",
+                      "maxLevel": "100"
+                    }
+                  ]
+                }
+              ],
+            "pHrules":
+              [
+                { "phRule": "pH value: 8 to 11.6" },
+                { "phRule": "pH value of the mixture with oxidative part: 6 to 11.6" }
+              ]
+            },
+            { "name" : "Hair colourant permanent oxidative type type 2 two components colourant part with high level of oils",
+              "number" : "11.5"
+            },
+            { "name" : "Hair colourant permanent oxidative type type 3 multi components colourant part a",
+              "number" : "11.6"
+            },
+            { "name" : "Hair colourant permanent oxidative type type 3 multi components colourant part b",
+              "number" : "11.7"
+            },
+            { "name" : "dye remover reducing type part b",
+              "number" : "11.11"
+            },
+            { "name" : "dye remover oxidative type part a",
+              "number" : "11.12"
+            },
+            { "name" : "dye remover oxidative type part b",
+              "number" : "11.13"
+            },
+            { "name" : "Skin dye removing cleanser reducing type",
+              "number" : "11.14"
+            },
+            { "name" : "Hair bleach powder",
+              "number" : "11.15"
+            },
+            { "name" : "Hair bleach paste",
+              "number" : "11.16"
+            },
+            { "name" : "Hair bleach oxidative part type 1",
+              "number" : "11.17"
+            }
+          ]
+        },
+        { 
+          "categoryName" : "Hair styling products",
+          "formulations" : [
             ]
-          }
-        ]
-      }
-    ],
+        },
+        { 
+          "categoryName" : "Nail varnish",
+          "formulations" : [
+            ]
+        },
+        { 
+          "categoryName" : "Nail care",
+          "formulations" : [
+            ]
+        },
+        { 
+          "categoryName" : "Tooth care",
+          "formulations" : [
+            ]
+         }
+      ],
 
     "annexes": 
     [
