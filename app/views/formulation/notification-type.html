@@ -18,7 +18,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% set errorMessage = 'Select how you want to give the product ingredients' %}
+    {% set errorMessage = 'Select how you want to tell us about the product ingredients' %}
 
     {{ govukErrorSummary({
       titleText: "There is a problem",
@@ -31,62 +31,83 @@
     }) if errorState }}
 
     <h1 class="govuk-heading-xl">
-      Ingredients
+      Tell us about the product ingredients
     </h1>
-    <p>
-      There are 3 ways to give the ingredients of your products.
-    </p>
+
+
+    <p class='govuk-!-margin-bottom-4'>You can tell us about the ingredients in a cosmetic product by either:</p>
+      <ul class='govuk-list govuk-list--bullet'>
+      <li>choosing a &lsquo;frame formulation&rsquo; that matches the product most closely</li>
+      <li>uploading the &lsquo;concentration ranges&rsquo; of the ingredients (for example, above 0.1% w/w up to 1% w/w)</li>
+      <li>uploading the &lsquo;exact concentrations&rsquo; of the ingredients (% w/w)</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+      If the product was placed on the market <strong>after 31 January 2020</strong>, you'll also need to tell us the exact concentration of any ingredients the National Poison Information Service (NPIS) needs to know about in a separate document.</p>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            List of ingredients NPIS needs to know about
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          {% include "../includes/poisonous-ingredients.html" %}
+        </div>
+      </details>
+      </div>
+
+    <!--
     <h2 class="govuk-heading-m">
-      Frame formulation
+      Frame formulations
     </h2>
-    <p>
-      A ‘frame formulation’ lists the category or function of cosmetic ingredients and their maximum concentration. There are frame formulations to cover most cosmetic products. Choose the frame formulation that matches your product most closely from the list of frame formulations.
-    </p>
-    <p>
-      <a href='#'>
-        View frame formulations (opens in a new tab)
-      </a>
-    </p>
-    <p>
-      For products placed on the market after 31 January 2020 (Brexit), you also need to provide the exact concentration of any ingredients that The National Poison Information Service (NPIS) needs to know about as a separate document.
-    </p>
+
+    <p class='govuk-!-margin-bottom-3'>Frame formulations list the:</p>
+      <ul class='govuk-list govuk-list--bullet'>
+      <li>category or function of the ingredients
+      <li>maximum concentration of the ingredients
+      </ul>
+
+    <p class='govuk-!-margin-bottom-2'>You'll need to choose the frame formulation that matches the product most closely. There are frame formulations to cover most cosmetic products.</p>
+
+    <p class='govuk-!-margin-bottom-3'><a href='#'>View frame formulations (opens in a new tab)</a></p>
+
+
     <h2 class="govuk-heading-m">
       Concentration ranges
     </h2>
     <p>
-      List each ingredient and its concentration within a defined range (for example, ‘above 0.1% w/w up to 1% w/w’).
+      You'll need to upload a PDF which lists each ingredient and its concentration within a defined range (for example ‘above 0.1% w/w up to 1% w/w’).
     </p>
-    <p>
-      For products placed on the market after 31 January 2020, list any poisonous ingredients that NPIS needs to know about as exact concentrations. 
-    </p>
-    <h2 class="govuk-heading-m">
-      Exact concentration
-    </h2>
+
+    <h2 class="govuk-heading-m">Exact concentration</h2>
+
     <p class='govuk-!-margin-bottom-9'>
-      List all ingredients and their exact concentration.
-    </p>
+      You'll need to upload a PDF which lists all the ingredients and their exact concentration
+    </p> -->
+
 
     {{ govukRadios({
       idPrefix: "where-do-you-live",
       name: "where-do-you-live",
       fieldset: {
         legend: {
-          text: "How do you want to give the ingredients?",
+          text: "How do you want to tell us about the ingredients?",
           classes: "govuk-fieldset__legend--m"
         }
       },
       items: [
         {
           value: "england",
-          text: "Frame formulation"
+          text: "Choose a frame formulation"
         },
         {
           value: "scotland",
-          text: "Concentration ranges"
+          text: "Upload the concentration ranges"
         },
         {
           value: "wales",
-          text: "Exact concentration"
+          text: "Upload the exact concentrations"
         }
       ]
     }) }}

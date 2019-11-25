@@ -18,7 +18,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% set errorMessage = 'Choose a list of ingredients' %}
+    {% set errorMessage = 'Upload a list of ingredients' %}
 
     {{ govukErrorSummary({
       titleText: "There is a problem",
@@ -31,40 +31,63 @@
     }) if errorState }}
 
     <h1 class='govuk-heading-xl'>
-      Exact concentration of ingredients
+      Exact concentrations of the ingredients
     </h1>
 
-    <p class='govuk-!-margin-bottom-1'>
-      For all ingredients give the:
+    <p class='govuk-!-margin-bottom-3'>To tell us about the exact concentrations, you'll need to upload a PDF which lists the ingredients.</p>
+
+    <h2 class='govuk-heading-m'>
+      What you'll need to tell us
+    </h2>
+
+    <p class='govuk-!-margin-bottom-3'>List every ingredient in order of the largest concentration to the smallest.</p>
+
+    <p class='govuk-!-margin-bottom-3'>
+      For every ingredient tell us the:
     </p>
     <ul class='govuk-list govuk-list--bullet'>
-      <li>ingredient name using International Nomenclature of Cosmetic Ingredients (INCI) name</li>
+      <li>International Nomenclature of Cosmetic Ingredients (INCI) name</li>
       <li>Chemical Abstracts Service (CAS) number</li>
-      <li>exact concentration as % w/w</li>
+      <li>exact concentration (% w/w)</li>
     </ul>
-    <p>
-      List the ingredients you need to tell NPIS about first, largest to smallest quantity.
-    </p>
+
+    <div class="govuk-inset-text">
+
+    <p class='govuk-!-margin-bottom-3'>The National Poison Information Service (NPIS) needs to know about some ingredients in the product – list these first.</p>
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Ingredients NPIS needs to know about
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          {% include "../includes/poisonous-ingredients.html" %}
+        </div>
+      </details>
+
+    </div>
+
+
   </div>
+
+
+
   <div class="govuk-grid-column-full">
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Ingredients you need to tell NPIS about
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        {% include "../includes/poisonous-ingredients.html" %}
-      </div>
-    </details>
+
   </div>
   <div class="govuk-grid-column-two-thirds">
+
+<!--
+
     <h3 class='govuk-heading-s'>
       Shades
     </h3>
     <p class='govuk-!-margin-bottom-9'>
       For products available shades list the difference between shades clearly. If any ingredients that NPIS need to know about differ between shades, these must be submitted as a seperate notitication.
     </p>
+    -->
 
     {% include '../includes/upload.html' %}
 
