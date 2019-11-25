@@ -548,13 +548,16 @@ module.exports = {
             { "name" : "Hair colourant permanent oxidative type type 3 multi components colourant part b",
               "number" : "11.7"
             },
-            { "name" : "dye remover reducing type part b",
+            { "name" : "Dye remover reducing type part a",
+              "number" : "11.10"
+            },
+            { "name" : "Dye remover reducing type part b",
               "number" : "11.11"
             },
-            { "name" : "dye remover oxidative type part a",
+            { "name" : "Dye remover oxidative type part a",
               "number" : "11.12"
             },
-            { "name" : "dye remover oxidative type part b",
+            { "name" : "Dye remover oxidative type part b",
               "number" : "11.13"
             },
             { "name" : "Skin dye removing cleanser reducing type",

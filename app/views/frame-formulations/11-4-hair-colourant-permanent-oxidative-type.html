@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Frame formulations",
+    href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class='govuk-grid-row'>
+    <div class='govuk-grid-column-two-thirds'>
+      <h1 class='govuk-heading-l'>
+        {{ data.frameformulations[10].formulations[3].name }}{% if data.frameformulations[10].formulations[3].subname %}, {{ data.frameformulations[10].formulations[3].subname | lower }}
+        {% endif %}
+      </h1>
+      <p>
+        {{ data.frameformulations[10].formulations[3].relatedTo }}
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
