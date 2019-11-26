@@ -34,15 +34,15 @@
       Exact concentrations of the ingredients
     </h1>
 
-    <p class='govuk-!-margin-bottom-3'>To tell us about the exact concentrations, you'll need to upload a PDF which lists the ingredients.</p>
+    <p class='govuk-!-margin-bottom-3'>To tell us about the exact concentrations, you’ll need to upload a PDF which lists the ingredients.</p>
 
     <h2 class='govuk-heading-m'>
-      What you'll need to tell us
+      What you’ll need to tell us
     </h2>
 
     <p class='govuk-!-margin-bottom-3'>List every ingredient in order of the largest concentration to the smallest.</p>
 
-    <p class='govuk-!-margin-bottom-3'>
+    <p class='govuk-!-margin-bottom-1'>
       For every ingredient tell us the:
     </p>
     <ul class='govuk-list govuk-list--bullet'>
@@ -52,31 +52,24 @@
     </ul>
 
     <div class="govuk-inset-text">
-
-    <p class='govuk-!-margin-bottom-3'>The National Poison Information Service (NPIS) needs to know about some ingredients in the product – list these first.</p>
-
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Ingredients NPIS needs to know about
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          {% include "../includes/poisonous-ingredients.html" %}
-        </div>
-      </details>
-
+      <p class=''>
+        The National Poison Information Service (NPIS) needs to know about some ingredients in the product – list these first.
+      </p>
     </div>
-
-
+  </div>
+  <div class='govuk-grid-column-full'>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Ingredients NPIS needs to know about
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        {% include "../includes/poisonous-ingredients.html" %}
+      </div>
+    </details>
   </div>
 
-
-
-  <div class="govuk-grid-column-full">
-
-  </div>
   <div class="govuk-grid-column-two-thirds">
 
 <!--
