@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "name.html"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="./check-your-answers" method="post" novalidate>
+
+        <h1 class="govuk-heading-xl">
+          Upload details about the nanomaterial
+        </h1>
+
+        <p class='govuk-!-margin-bottom-1'>
+          You’ll need to upload a PDF with the following information about the nanomaterial:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            the International Union of Pure and Applied Chemistry (IUPAC) name
+          </li>
+          <li>
+            the quantity expected to be placed on the market each year
+          </li>
+          <li>
+            the specification, including the size of particles, physical and chemical properties
+          </li>
+          <li>
+            the droplet size and distribution when sprayed
+          </li>
+          <li>
+            the toxicological profile
+          </li>
+          <li>
+            the safety data relating to the category of products in which it will be used
+          </li>
+          <li>
+            whether it reacts or changes its properties in certain conditions, for example, if its photocatalytic
+          </li>
+        </ul>
+
+        <p>
+          You’ll also need to include the email address of someone to contact about the nanomaterial.
+        </p>
+
+        {{ govukFileUpload({
+          id: "file-upload-1",
+          name: "file-upload-1",
+          label: {
+            text: "Upload a file"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

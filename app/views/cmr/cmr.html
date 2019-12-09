@@ -1,0 +1,80 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    url: '/ingredients',
+    pageTitle: 'Ingredients',
+    postBrexit: 'No'
+    }) }}
+{% endblock %}
+
+
+{% macro singleItem(errorState=false) %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set errorMessage = 'Select yes if product contains category 1A or 1B CMRs' %}
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: errorMessage,
+          href: "#passport-issued-error"
+        }
+      ]
+    }) if errorState }}
+
+    <h1 class='govuk-heading-xl'>
+      Substances known or presumed to cause cancer, mutations or are toxic for reproduction (CMRs)
+    </h1>
+
+    <p class='govuk-!-margin-bottom-1'>
+      CMRs categories are:
+    </p>
+    <ul class='govuk-list govuk-list--bullet'>
+      <li>1A – known from studies on humans</li>
+      <li>1B – presumed from studies on animals</li>
+      <li>2 – suspected from some human or animal studies</li>
+    </ul>
+
+    {{ govukRadios({
+      idPrefix: "where-do-you-live",
+      name: "where-do-you-live",
+      fieldset: {
+        legend: {
+          text: "Does the product contain category 1A or 1B CMRs?",
+          classes: "govuk-fieldset__legend--m",
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+  </div>
+</div>
+{% endmacro %}
+
+{% block content %}
+  {{singleItem()}}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+ {{singleItem(errorState=true)}}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "nanomaterials-tab.html"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="./notified-to-eu" method="post" novalidate>
+        {{ govukInput({
+          label: {
+            text: "What is the name of the nanomaterial?",
+            classes: "govuk-label--xl",
+            isPageHeading: true
+          },
+          id: "nanomaterial-name",
+          name: "nanomaterial-name"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
