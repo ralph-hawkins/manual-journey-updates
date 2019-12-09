@@ -33,14 +33,31 @@
       Ingredients the National Poison Information Service needs to know about</h1>
 
     <p>
-    The National Poison Information Service (NPIS) needs to know about the exact quantities (% w/w) of these ingredients, so it can help with the treatment of anyone who may be affected by the product.
+    The National Poison Information Service (NPIS) needs to know the exact quantities (% w/w) of some ingredients in the product, so it can help with the treatment of anyone who might accidentally be affected by them.
     </p>
   </div>
 
+  <div class='govuk-grid-column-full'>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Ingredients NPIS needs to know about
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        {% include "../includes/poisonous-ingredients.html" %}
+      </div>
+    </details>
+  </div>
+
+  <!--
   <div class="govuk-grid-column-full govuk-!-margin-bottom-9">
   {% include "../includes/poisonous-ingredients.html" %}
   </div>
+   -->
+
   <div class="govuk-grid-column-two-thirds">
+
 
   <form action="/form-handler" method="post" novalidate>
     {{ govukRadios({
@@ -71,7 +88,9 @@
 
   </form>
 </div>
+
 {% endmacro %}
+
 
 {% block content %}
   {{singleItem()}}
