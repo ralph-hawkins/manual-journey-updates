@@ -31,9 +31,37 @@
     }) if errorState }}
 
     <h1 class='govuk-heading-xl'>
-      Ingredients
+      Upload a list of NPIS ingredients
     </h1>
 
+    <p class='govuk-!-margin-bottom-3'>To tell us about ingredients NPIS needs to know about, you’ll need to upload a PDF which lists the ingredients with their exact concentrations.</p>
+
+    <h2 class='govuk-heading-m'>
+      What you’ll need to tell us
+    </h2>
+
+    <p class='govuk-!-margin-bottom-3'>List the ingredients in order of the largest concentration to the smallest.</p>
+
+    <p class='govuk-!-margin-bottom-2'>
+      For every ingredient tell us the:
+    </p>
+    <ul class='govuk-list govuk-list--bullet'>
+      <li>International Nomenclature of Cosmetic Ingredients (INCI) name</li>
+      <li>Chemical Abstracts Service (CAS) number</li>
+    </ul>
+
+    <div class='govuk-grid-column-full'>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Ingredients NPIS needs to know about
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          {% include "../includes/poisonous-ingredients.html" %}
+        </div>
+      </details>
+    </div>
 
     {% include '../includes/upload.html' %}
 
