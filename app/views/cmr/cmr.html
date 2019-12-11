@@ -35,13 +35,16 @@
     </h1>
 
 
-    <p class='govuk-!-margin-bottom-1'>
-      CMRs categories are:
+    <p class='govuk-!-margin-bottom-2'>
+      Carcinogenic, mutagenic or reprotoxic (CMR) substances can cause or promote cancers, cause genetic mutations or damage the reproductive process</p>
+
+    <p class='govuk-!-margin-bottom-2'>
+       CMR substances can be classified into 3 categories:
     </p>
     <ul class='govuk-list govuk-list--bullet'>
-      <li>1A – known from studies on humans</li>
-      <li>1B – presumed from studies on animals</li>
-      <li>2 – suspected from some human or animal studies</li>
+      <li>1A – known to be CMRs, based on human studies</li>
+      <li>1B – presumed to be CMRs, based on animal studies</li>
+      <li>2 – suspected to be CMRs, based on some human or animal studies</li>
     </ul>
 
     {{ govukRadios({
@@ -49,7 +52,7 @@
       name: "where-do-you-live",
       fieldset: {
         legend: {
-          text: "Does the product contain category 1A or 1B CMRs?",
+          text: "Does the product contain category 1A or 1B CMR substances?",
           classes: "govuk-fieldset__legend--m"
         }
       },
