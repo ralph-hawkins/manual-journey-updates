@@ -16,13 +16,83 @@
   <div class='govuk-grid-row'>
     <div class='govuk-grid-column-two-thirds'>
       <h1 class='govuk-heading-l'>
-        {{ data.frameformulations[10].formulations[3].name }}{% if data.frameformulations[10].formulations[3].subname %}, {{ data.frameformulations[10].formulations[3].subname | lower }}
-        {% endif %}
+        {{ data.frameformulations[10].formulations[3].name }}
       </h1>
-      <p>
-        {{ data.frameformulations[10].formulations[3].relatedTo }}
-      </p>
-
+      <h2 class='govuk-heading-m'>
+        {% if data.frameformulations[10].formulations[3].subname %}
+          {{ data.frameformulations[10].formulations[3].subname }}
+        {% endif %}
+      </h2>
+      <dl class="meta govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row govuk-body-s">
+          <dt class="govuk-summary-list__key no-border">
+            Formulation number:
+          </dt>
+          <dd class="govuk-summary-list__value no-border">
+            {{ data.frameformulations[10].formulations[3].number }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-body-s no-border">
+        {% if data.frameformulations[10].formulations[3].relatedTo %}
+          <dt class="govuk-summary-list__key no-border">
+            Related formulations:
+          </dt>
+          <dd class="govuk-summary-list__value no-border">
+            {{ data.frameformulations[10].formulations[3].relatedTo }}
+          </dd>
+          {% endif %}
+        </div>
+      </dl>
+    </div>
+    {% if data.frameformulations[10].formulations[3].notes %}
+      <h3 class='govuk-heading-m govuk-!-padding-top-6'>
+        Note
+      </h3>
+      <ul class='govuk-list'>
+        {% for item in data.frameformulations[10].formulations[3].pHrules %}
+          <li>
+            {{ item.pHrule }}
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    <div class='govuk-grid-column-full'>
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-!-font-size-36">Ingredients and maximum amounts</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Ingredient</th>
+            <th scope="col" class="govuk-table__header">Maximum amount</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for item in data.frameformulations[10].formulations[3].ingredientsAndLevels %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-width-three-quarters">
+              {{ item.ingredient }}
+              {% if item.note %}
+                <br><div class='govuk-!-padding-top-2'>{{ item.note }}</div>
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell govuk-!-width-one-quarter govuk-table__cell--numeric"> {{ item.maxLevel }}%</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class='govuk-grid-column-two-thirds'>
+      {% if data.frameformulations[10].formulations[3].pHrules %}
+      <h3 class='govuk-heading-m govuk-!-padding-top-6'>
+        PH information
+      </h3>
+      <ul class='govuk-list'>
+        {% for item in data.frameformulations[10].formulations[3].pHrules %}
+          <li>
+            {{ item.pHrule }}
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     </div>
   </div>
 

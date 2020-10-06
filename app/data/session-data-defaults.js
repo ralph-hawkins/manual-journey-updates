@@ -444,7 +444,7 @@ module.exports = {
             "subname": "Type 1: two components - colourant part",
             "number": "11.4",
             "relatedTo": "To be mixed immediately prior to use with oxidative part (11.8-2013 or 11.9-2013)",
-            "ingredientsAndLevel": 
+            "ingredientsAndLevels": 
               [
                 {
                   "ingredient": "Anionic surfactants (for example, ammonium laureth sulfate)",
@@ -477,66 +477,57 @@ module.exports = {
                 {
                   "ingredient": "Ethanol and/or isopropanol (alcohol, alcohol denat., isopropyl alcohol)",
                   "maxLevel": "16"
-                }
-              ],
-            "ingredientsAndLevelsubGroup":
-              [
-                {
-                  "subcategoryName": "Hair dyeing agents",
-                  "subGroupIngredientsAndLevel":
-                  [
-                    { 
-                      "ingredient": "Primary intermediates (for example, p-phenylenediamines such as p-phenylenediamine and toluene-2,5-diamine, p-aminophenols such as p-aminophenol and 4-amino-m-cresol, heterocyclic diamines such as 1-hydroxyethyl 4,5-diamino pyrazole sulfate)",
-                      "maxLevel": "6"
-                    },
-                    { 
-                      "ingredient": "Couplers (for example, m-aminophenols such as m-aminophenol and 4-amino-2-hydroxytoluene, m-phenylenediamines such as 2-amino-4-hydroxyethylamino-anisole, resorcinols such as resorcinol and 4-chlororesorcinol, pyridines such as 2,6-dihydroxy-3,4-dimethylpyridine, naphtols such as 1,5-naphthalenediol)",
-                      "maxLevel": "6"
-                    },
-                    { 
-                      "ingredient": "Directs (for example, HC red no. 3, 2-amino-6-chloro-4-nitrophenol, basic yellow 87)",
-                      "maxLevel": "6"
-                    },
-                    { 
-                      "ingredient": "Alkaline agents (for example, ammonium hydroxide*, ethanolamine)",
-                      "note": "Maximum concentration of ammonium hydroxide permitted is 6 %",
-                      "maxLevel": "10"
-                    },
-                    { 
-                      "ingredient": "Cationic surfactants (for example, dicetyldimonium chloride, PEG-2 oleamine)",
-                      "maxLevel": "5"
-                    },
-                    { 
-                      "ingredient": "Cationic polymers (for example, polyquaternium-6)",
-                      "maxLevel": "5"
-                    },
-                    { 
-                      "ingredient": "Additional ingredients (for example, hair conditioning agents, pearlescent agents)",
-                      "maxLevel": "5"
-                    },
-                    { 
-                      "ingredient": "Antioxidants, reducing agents (for example, ascorbic acid, sodium metabisulfite)",
-                      "maxLevel": "3"
-                    },
-                    { 
-                      "ingredient": "Parfum",
-                      "maxLevel": "2"
-                    },
-                    { 
-                      "ingredient": "Chelating agents (for example, EDTA)",
-                      "maxLevel": "1"
-                    },
-                    { 
-                      "ingredient": "Aqua to",
-                      "maxLevel": "100"
-                    }
-                  ]
+                },
+                { 
+                  "ingredient": "Hair dyeing agent: Primary intermediates (for example, p-phenylenediamines such as p-phenylenediamine and toluene-2,5-diamine, p-aminophenols such as p-aminophenol and 4-amino-m-cresol, heterocyclic diamines such as 1-hydroxyethyl 4,5-diamino pyrazole sulfate)",
+                  "maxLevel": "6"
+                },
+                { 
+                  "ingredient": "Hair dyeing agent: Couplers (for example, m-aminophenols such as m-aminophenol and 4-amino-2-hydroxytoluene, m-phenylenediamines such as 2-amino-4-hydroxyethylamino-anisole, resorcinols such as resorcinol and 4-chlororesorcinol, pyridines such as 2,6-dihydroxy-3,4-dimethylpyridine, naphtols such as 1,5-naphthalenediol)",
+                  "maxLevel": "6"
+                },
+                { 
+                  "ingredient": "Hair dyeing agent: Directs (for example, HC red no. 3, 2-amino-6-chloro-4-nitrophenol, basic yellow 87)",
+                  "maxLevel": "6"
+                },
+                { 
+                  "ingredient": "Alkaline agents (for example, ammonium hydroxide, ethanolamine)",
+                  "note": "Maximum concentration of ammonium hydroxide permitted is 6%",
+                  "maxLevel": "10"
+                },
+                { 
+                  "ingredient": "Cationic surfactants (for example, dicetyldimonium chloride, PEG-2 oleamine)",
+                  "maxLevel": "5"
+                },
+                { 
+                  "ingredient": "Cationic polymers (for example, polyquaternium-6)",
+                  "maxLevel": "5"
+                },
+                { 
+                  "ingredient": "Additional ingredients (for example, hair conditioning agents, pearlescent agents)",
+                  "maxLevel": "5"
+                },
+                { 
+                  "ingredient": "Antioxidants, reducing agents (for example, ascorbic acid, sodium metabisulfite)",
+                  "maxLevel": "3"
+                },
+                { 
+                  "ingredient": "Parfum",
+                  "maxLevel": "2"
+                },
+                { 
+                  "ingredient": "Chelating agents (for example, EDTA)",
+                  "maxLevel": "1"
+                },
+                { 
+                  "ingredient": "Aqua to",
+                  "maxLevel": "100"
                 }
               ],
             "pHrules":
               [
-                { "phRule": "pH value: 8 to 11.6" },
-                { "phRule": "pH value of the mixture with oxidative part: 6 to 11.6" }
+                { "pHrule": "pH value: 8 to 11.6" },
+                { "pHrule": "pH value of the mixture with oxidative part: 6 to 11.6" }
               ]
             },
             { "name" : "Hair colourant permanent oxidative type type 2 two components colourant part with high level of oils",
