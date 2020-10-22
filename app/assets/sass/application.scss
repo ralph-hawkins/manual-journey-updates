@@ -77,9 +77,12 @@ $govuk-assets-path: '/govuk/assets/';
   }
 
 .pageMeta {
-  margin-top: 20px;
-  govuk-body, a {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  govuk-body, a, h1 {
     font-family: "Courier New", Courier, monospace;
+    font-size: 19px;
+    font-weight: normal;
     &:visited {
       color: $govuk-brand-colour;
     }
@@ -97,8 +100,9 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 hr {
-  margin: 40px 0px 40px;
-  border-top: 1px solid black;
+  margin-bottom: 0px;
+  border-collapse: collapse;
+  border-bottom: 1px solid black;
 }
 
 .remove-button {

@@ -1,0 +1,26 @@
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Ingredient</th>
+            <th scope="col" class="govuk-table__header">Maximum amount</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for item in data.frameformulations[parent].formulations[child].ingredientsAndLevels %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-width-three-quarters">
+              {{ item.ingredient }}
+              {% if item.ingredientExample %}
+              <br><span class='govuk-body-s'>Examples: {{ item.ingredientExample | safe }}</span>
+              {% endif %}
+              {% if item.note %}
+                <br><span class='govuk-body-s'>{{ item.note }}</span>
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell govuk-!-width-one-quarter govuk-table__cell--numeric"> {{ item.maxLevel }}%</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>

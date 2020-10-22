@@ -1,0 +1,144 @@
+{% extends "layout-no-header-footer.html" %}
+{% import "../includes/page-meta.html" as metaDetails %}
+{% set title='Face care products other than face mask' %}
+{% set parent='0' %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ metaDetails.meta({
+    url: '/choose-frame-formulation',
+    pageTitle: title,
+    postBrexit: 'No'
+    }) }}
+{% endblock %}
+
+
+{% macro singleItem(errorState=false) %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set errorMessage = 'Choose the frame formulation that matches your product most closely' %}
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: errorMessage,
+          href: "#passport-issued-error"
+        }
+      ]
+    }) if errorState }}
+
+    <h1 class='govuk-heading-l'>
+      Face care products other than face mask
+    </h1>
+  </div>
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          Which frame formulation matches your product most closely?
+        </legend>
+        <div id="contact-hint" class="govuk-hint">
+          Select one option.
+        </div>
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+            <label class="govuk-label govuk-radios__label" for="sign-in">
+              {% set child='0' %}
+              {{ data.frameformulations[parent].formulations[child].name }}
+            </label>
+            <details class="govuk-details govuk-!-margin-left-3" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  See ingredients and quantity
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                {% include "../includes/frame-formulation-table.html" %}
+              </div>
+            </details>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+            <label class="govuk-label govuk-radios__label" for="sign-in">
+              {% set child='1' %}
+              {{ data.frameformulations[0].formulations[child].name }}
+            </label>
+            <details class="govuk-details govuk-!-margin-left-3" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  See ingredients and quantity
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                {% include "../includes/frame-formulation-table.html" %}
+              </div>
+            </details>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+            <label class="govuk-label govuk-radios__label" for="sign-in">
+              {% set child='2' %}
+              {{ data.frameformulations[0].formulations[child].name }}
+            </label>
+            <details class="govuk-details govuk-!-margin-left-3" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  See ingredients and quantity
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                {% include "../includes/frame-formulation-table.html" %}
+              </div>
+            </details>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+            <label class="govuk-label govuk-radios__label" for="sign-in">
+              {% set child='3' %}
+              {{ data.frameformulations[0].formulations[child].name }}
+            </label>
+            <details class="govuk-details govuk-!-margin-left-3" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  See ingredients and quantity
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                {% include "../includes/frame-formulation-table.html" %}
+              </div>
+            </details>
+          </div>
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live-6" name="where-do-you-live" type="radio" value="abroad">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
+              None of these match the product
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+  </div>
+</div>
+{% endmacro %}
+
+{% block content %}
+  {{singleItem()}}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr>
+    </div>
+  </div>
+ {% set errorState = true %}
+ {{singleItem(errorState=true)}}
+{% endblock %}

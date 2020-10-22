@@ -9,9 +9,9 @@ journeys where users are returning or logging in to an existing application.
 
 Example usage:
 
-"full&#8209;name": "Sarah Philips",
+"full-name": "Sarah Philips",
 
-"options&#8209;chosen": [ "foo", "bar" ]
+"options-chosen": [ "foo", "bar" ]
 
 ============================================================================
 
@@ -356,15 +356,375 @@ module.exports = {
     [
       { 
         "categoryName" : "Skin care",
+        "categoryNumber": 1,
         "formulations" : [
-          { "name" : "Item" },
-          { "name" : "Item" }
-          ]
+          {
+            "name": "Skin care cream, lotion, or gel",
+            "url": "1-1-skin-care-cream-lotion-gel.html",
+            "number": 1,
+            "ingredientsAndLevels": [
+                { "ingredient": "Oils (for example, vegetable and/or mineral), waxes and fats (for example, long chain alcohols)", 
+                  "maxLevel": "30" 
+                },
+                { "ingredient": "Silicones including volatile silicones", 
+                  "ingredientExample": "Cyclopentasiloxane, dimethicone",
+                  "maxLevel": "20" 
+                },
+                { "ingredient": "Humectants", 
+                  "ingredientExample": "Glycerin, propylene glycol, PEG",
+                  "maxLevel": "20" 
+                },
+                { "ingredient": "Thickeners", 
+                  "ingredientExample": "Carbomer, xanthan gum",
+                  "maxLevel": "12" 
+                },
+                { "ingredient": "Ethanol (alcohol, alcohol denat.)", 
+                  "maxLevel": "10" 
+                },
+                { "ingredient": "Additional ingredients", 
+                  "ingredientExample": "Vitamins, antioxidants, plant extracts",
+                  "maxLevel": "10" 
+                },
+                { "ingredient": "Bulking agents", 
+                  "ingredientExample": "Talc, silica, nylon powder",
+                  "maxLevel": "5" 
+                },
+                { "ingredient": "UV filters", 
+                  "maxLevel": "5" 
+                },
+                { "ingredient": "Emulsifying agents, anionic / amphoteric / non-ionic surfactants", 
+                  "ingredientExample": "PEG stearate, ceteareth",
+                  "maxLevel": "5" 
+                },
+                { "ingredient": "Preservatives, antimicrobials", 
+                  "maxLevel": "2" 
+                },
+                { "ingredient": "Colourants", 
+                  "maxLevel": "2" 
+                },
+                { "ingredient": "Parfum", 
+                  "maxLevel": "1" 
+                },
+                { "ingredient": "Aqua", 
+                  "maxLevel": "100" 
+                }
+              ]
+          },
+          {
+            "name": "Skin care cream, lotion, or gel — with high level of silicones",
+            "url": "#",
+            "number": 2,
+            "ingredientsAndLevels": [
+                {
+                  "ingredient" : "Silicones including volatile silicones",
+                  "ingredientExample": "cyclopentasiloxane, dimethicone",
+                  "maxLevel": 50
+                  },
+                  {
+                  "ingredient" : "Oils (for example, vegetable and/or mineral), waxes and fats (for example, long chain alcohols)",
+                  "maxLevel": 40
+                  },
+                  {
+                  "ingredient" : "Ethanol (alcohol, alcohol denat.)",
+                  "maxLevel": 25
+                  },
+                  {
+                  "ingredient" : "Humectants",
+                  "ingredientExample": "glycerin, propylene glycol, PEG",
+                  "maxLevel": 20
+                  },
+                  {
+                  "ingredient" : "Additional ingredients",
+                  "ingredientExample": "plant extracts, vitamins",
+                  "maxLevel": 10
+                  },
+                  {
+                  "ingredient" : "Bulking agents",
+                  "ingredientExample": "starch, kaolin, talc",
+                  "maxLevel": 5
+                  },
+                  {
+                  "ingredient" : "Emulsifying agents, anionic / amphoteric / non-ionic surfactants",
+                  "ingredientExample": "sorbitan sesquioleate, sorbitan stearate",
+                  "maxLevel": 5
+                  },
+                  {
+                  "ingredient" : "Thickeners",
+                  "ingredientExample": "cellulose gum",
+                  "maxLevel": 5
+                  },
+                  {
+                  "ingredient" : "UV filters",
+                  "maxLevel": 5
+                  },
+                  {
+                  "ingredient" : "Preservatives, antimicrobials",
+                  "maxLevel": 2
+                  },
+                  {
+                  "ingredient" : "Colorants",
+                  "maxLevel": 2
+                  },
+                  {
+                  "ingredient" : "Parfum",
+                  "maxLevel": 1
+                  },
+                  {
+                  "ingredient" : "Aqua to",
+                  "maxLevel": 10
+                  }
+            ]
+          },
+          {
+            "name": "Skin care cream, lotion, or gel — with high level of humectants",
+            "url": "#",
+            "number": 3,
+            "ingredientsAndLevels": 
+            [
+              { 
+                "ingredient": "Humectants",
+                "ingredientExample": "glycerin, propylene glycol, PEG",
+                "maxLevel": 50
+              },
+              { 
+                "ingredient": "Oils (for example, vegetable and/or mineral), waxes and fats (for example, long chain alcohols)",
+                "maxLevel": 40
+              },
+              { 
+                "ingredient": "Silicones including volatile silicones",
+                "ingredientExample": "cyclopentasiloxane, dimethicone",
+                "maxLevel": 20
+              },
+              { 
+                "ingredient": "Ethanol (alcohol, alcohol denat.)",
+                "maxLevel": 20
+              },
+              { 
+                "ingredient": "Emulsifying agents, anionic / amphoteric / non-ionic surfactants",
+                "ingredientExample": "glyceryl stearate, sodium cocoyl isethionate",
+                "maxLevel": 10
+              },
+              { 
+                "ingredient": "Bulking agents",
+                "ingredientExample": "silica, talc",
+                "maxLevel": 10
+              },
+              { 
+                "ingredient": "UV filters",
+                "maxLevel": 5
+              },
+              { 
+                "ingredient": "Film forming polymers",
+                "ingredientExample": "PVP",
+                "maxLevel": 5
+              },
+              { 
+                "ingredient": "Additional ingredients",
+                "ingredientExample": "vitamins, plant extracts",
+                "maxLevel": 5
+              },
+              { 
+                "ingredient": "Thickeners",
+                "ingredientExample": "carbomer",
+                "maxLevel": 5
+              },
+              { 
+                "ingredient": "Preservatives, antimicrobials",
+                "maxLevel": 2
+              },
+              { 
+                "ingredient": "Colorants",
+                "maxLevel": 2
+              },
+              { 
+                "ingredient": "Parfum",
+                "maxLevel": 1
+              },
+              { 
+                "ingredient": "Aqua to",
+                "maxLevel": 100
+              }
+            ]
+          },
+          {
+            "name": "Skin care cream, lotion, or gel — with high level of bulking agents",
+            "url": "#",
+            "number": 4,
+            "ingredientsAndLevels": [
+              { "ingredient": "Oils (for example, vegetable and/or mineral), waxes and fats for example,long chain alcohols )",
+                "maxLevel": 60 },
+              { "ingredient": "Thickeners",
+                "ingredientExample": "bentonite, carbomer, cellulose",
+                "maxLevel": 60 },
+              { "ingredient": "Humectants",
+                "ingredientExample": "glycerin, propylene glycol",
+                "maxLevel": 40 },
+              { "ingredient": "Bulking agents",
+                "ingredientExample": "starch, zinc oxide, kaolin",
+                "maxLevel": 40 },
+              { "ingredient": "Emulsifying agents, anionic / amphoteric / non-ionic surfactants",
+                "ingredientExample": "glyceryl stearate, sodium laureth sulfate",
+                "maxLevel": 25 },
+              { "ingredient": "Ethanol (alcohol, alcohol denat.)",
+                "maxLevel": 20 },
+              { "ingredient": "Silicones including volatile silicones",
+                "ingredientExample": "cyclopentasiloxane, dimethicone",
+                "maxLevel": 20 },
+              { "ingredient": "UV filters",
+                "maxLevel": 5 },
+              { "ingredient": "Additional ingredients",
+                "ingredientExample": "plant extracts, antioxidants, chelating agents",
+                "maxLevel": 5 },
+              { "ingredient": "Preservatives, antimicrobials",
+                "maxLevel": 2 },
+              { "ingredient": "Colorants",
+                "maxLevel": 2 },
+              { "ingredient": "Parfum",
+                "maxLevel": 1 },
+              { "ingredient": "Aqua to",
+                "maxLevel": 100 }
+            ]
+          },
+          {
+            "name": "Skin care cream, lotion, or gel — with high level of fatty compounds",
+            "url": "#",
+            "number": 5,
+            "ingredientsAndLevels": []
+          },
+          {
+            "name": "Skin care cream, lotion, or gel — with high level of fatty compounds",
+            "url": "#",
+            "number": 6,
+            "ingredientsAndLevels": []
+          },
+          {
+            "name": "Skin care cream, lotion, or gel — with high level of UV filters",
+            "url": "#",
+            "number": 7,
+            "ingredientsAndLevels": []
+          },
+          {
+            "name": "Zinc oxide based cream",
+            "url": "#",
+            "number": 7,
+            "ingredientsAndLevels": []
+          },
+          {
+            "name": "Skin gel (hydro-alcoholic based)",
+            "url": "#",
+            "number": 7,
+            "ingredientsAndLevels": []
+          },
+          { 
+            "name": "Tonic, cosmetic water",
+            "url": "#",
+            "number": 7,
+            "ingredientsAndLevels": []
+          },
+          { 
+            "name": "Chemical exfoliation products",
+            "url": "#",
+            "number": 7,
+            "ingredientsAndLevels": []
+          },
+          { 
+            "name": "Skin care (silicone based)",
+            "url": "#",
+            "number": 7,
+            "ingredientsAndLevels": []
+          },
+          { 
+            "name": "Petroleum jelly",
+            "url": "#",
+            "number": 7,
+            "ingredientsAndLevels": []
+          },
+          { 
+            "name": "Talcum powder (loose or pressed)",
+            "url": "#",
+            "number": 7,
+            "ingredientsAndLevels": []
+          },
+          { 
+            "name": "Lip care (stick, cream, gel)",
+            "url": "#",
+            "number": 7,
+            "ingredientsAndLevels": []
+          }
+        ]
       },
       { 
         "categoryName" : "Skin cleansing",
+        "categoryNumber": 2,
         "formulations" : [
-          { "name" : "Item" },
+          {
+            "name": "Liquid soap",
+            "url": "2-09-liquid-soap.html",
+            "number": 9,
+            "note": "Liquid ‘soaps’ may be soap based, totally synthetic based or a combination of both soap and synthetic.",
+            "ingredientsAndLevels": [
+                {
+                  "ingredient": "Anionic / amphoteric surfactants",
+                  "ingredientExample": "Laureth sulfate, betaine",
+                  "maxLevel": "40"
+                },
+                {
+                  "ingredient": "Non-ionic surfactants",
+                  "ingredientExample": "Glucose derivatives",
+                  "maxLevel": "40"
+                },
+                {
+                  "ingredient": "Soaps (sodium, potassium or triethanolamine)",
+                  "maxLevel": "20"
+                },
+                {
+                  "ingredient": "Emollients",
+                  "ingredientExample": "PEG-7, glyceryl cocoate",
+                  "maxLevel": "20"
+                },
+                {
+                  "ingredient": "Humectants",
+                  "ingredientExample": "Glycerin, propylene glycol, sorbitol",
+                  "maxLevel": "20"
+                },
+                {
+                  "ingredient": "Thickeners",
+                  "ingredientExample": "Sodium chloride, hydroxycellulose derivatives",
+                  "maxLevel": "5"
+                },
+                {
+                  "ingredient": "Additional ingredients",
+                  "ingredientExample": "Plant extracts, UV filters",
+                  "maxLevel": "5"
+                },
+                {
+                  "ingredient": "Pearlescent agents",
+                  "ingredientExample": "Glycol distearate, glycol stearate",
+                  "maxLevel": "5"
+                },
+                {
+                  "ingredient": "Skin conditioning agents",
+                  "ingredientExample": "Cationic cellulose",
+                  "maxLevel": "5"
+                },
+                {
+                  "ingredient": "Parfum",
+                  "maxLevel": "5"
+                },
+                {
+                  "ingredient": "Preservatives, antimicrobials",
+                  "maxLevel": "2"
+                },
+                {
+                  "ingredient": "Colourants",
+                  "maxLevel": "1"
+                },
+                {
+                  "ingredient": "Aqua", 
+                  "maxLevel": "100"
+                }
+            ]
+          },
           { "name" : "Item" }
           ]
       },
@@ -390,7 +750,7 @@ module.exports = {
           ]
       },
       { 
-        "categoryName" : "Shaving products",
+        "categoryName" : "Shaving",
         "formulations" : [
           { "name" : "Item" },
           { "name" : "Item" }
@@ -411,67 +771,74 @@ module.exports = {
           ]
       },
       { 
-        "categoryName" : "Sun products and self tanning products",
+        "categoryName" : "Sun and self tanning",
         "formulations" : [
           { "name" : "Item" },
           { "name" : "Item" }
           ]
       },
       { 
-        "categoryName" : "Hair and scalp care products",
+        "categoryName" : "Hair and scalp care",
         "formulations" : [
           { "name" : "Item" },
           { "name" : "Item" }
           ]
       },
       {
-        "categoryName": "Hair colouring products",
-        "categoryNumber": "11",
+        "categoryName": "Hair colouring",
+        "categoryNumber": 11,
         "formulations":
         [
           { "name" : "Hair colourant temporary shampoo",
-            "number" : "11.1"
+            "number" : 1
           },
           { "name" : "Hair colourant temporary foam lotion",
-            "number" : "11.2"
+            "number" : 2
           },
           { "name" : "Hair colourant temporary or semi permanent liquid cream foam",
-            "number" : "11.3"
+            "number" : 3
           },
           {
             "name": "Hair colourant (permanent, oxidative type)",
             "url": "11-4-hair-colourant-permanent-oxidative-type",
             "subname": "Type 1: two components - colourant part",
-            "number": "11.4",
+            "number": 4,
             "relatedTo": "To be mixed immediately prior to use with oxidative part (11.8-2013 or 11.9-2013)",
             "ingredientsAndLevels": 
               [
                 {
-                  "ingredient": "Anionic surfactants (for example, ammonium laureth sulfate)",
+                  "ingredient": "Anionic surfactants",
+                  "ingredientExample": "Ammonium laureth sulfate",
                   "maxLevel": "20"
                 },
                 {
-                  "ingredient": "Non-ionic surfactants (for example, laureth-12, deceth-3)",
+                  "ingredient": "Non-ionic surfactants",
+                  "ingredientExample": "Laureth&#8209;12, deceth&#8209;3",
                   "maxLevel": "20"
                 },
                 {
-                  "ingredient": "Amphoteric surfactants (for example, betaine derivatives)",
+                  "ingredient": "Amphoteric surfactants",
+                  "ingredientExample": "Betaine derivatives",
                   "maxLevel": "20"
                 },
                 {
-                  "ingredient": "Emulsifying agents (for example, ethoxylated long chain alcohols)",
+                  "ingredient": "Emulsifying agents",
+                  "ingredientExample": "Ethoxylated long chain alcohols",
                   "maxLevel": "30"
                 },
                 {
-                  "ingredient": "Soaps (for example, ammonium hydroxide/ethanolamine oleates)",
+                  "ingredient": "Soaps",
+                  "ingredientExample": "Ammonium hydroxide/ethanolamine oleates",
                   "maxLevel": "30"
                 },
                 {
-                  "ingredient": "Thickeners (for example, carbomer, long chain alcohols)",
+                  "ingredient": "Thickeners",
+                  "ingredientExample": "Carbomer, long chain alcohols",
                   "maxLevel": "30"
                 },
                 {
-                  "ingredient": "Solvents (for example, propylene glycol, glycerin)",
+                  "ingredient": "Solvents",
+                  "ingredientExample": "Propylene glycol, glycerin",
                   "maxLevel": "20"
                 },
                 {
@@ -479,36 +846,44 @@ module.exports = {
                   "maxLevel": "16"
                 },
                 { 
-                  "ingredient": "Hair dyeing agent: Primary intermediates (for example, p-phenylenediamines such as p-phenylenediamine and toluene-2,5-diamine, p-aminophenols such as p-aminophenol and 4-amino-m-cresol, heterocyclic diamines such as 1-hydroxyethyl 4,5-diamino pyrazole sulfate)",
+                  "ingredient": "Hair dyeing agent: Primary intermediates",
+                  "ingredientExample": "p&#8209;phenylenediamines such as p&#8209;phenylenediamine and toluene&#8209;2,5&#8209;diamine, p&#8209;aminophenols such as p&#8209;aminophenol and 4&#8209;amino&#8209;m&#8209;cresol, heterocyclic diamines such as 1&#8209;hydroxyethyl 4,5&#8209;diamino pyrazole sulfate",
                   "maxLevel": "6"
                 },
                 { 
-                  "ingredient": "Hair dyeing agent: Couplers (for example, m-aminophenols such as m-aminophenol and 4-amino-2-hydroxytoluene, m-phenylenediamines such as 2-amino-4-hydroxyethylamino-anisole, resorcinols such as resorcinol and 4-chlororesorcinol, pyridines such as 2,6-dihydroxy-3,4-dimethylpyridine, naphtols such as 1,5-naphthalenediol)",
+                  "ingredient": "Hair dyeing agent: Couplers",
+                  "ingredientExample": "m&#8209;aminophenols such as m&#8209;aminophenol and 4&#8209;amino&#8209;2&#8209;hydroxytoluene, m&#8209;phenylenediamines such as 2&#8209;amino&#8209;4&#8209;hydroxyethylamino&#8209;anisole, resorcinols such as resorcinol and 4&#8209;chlororesorcinol, pyridines such as 2,6&#8209;dihydroxy&#8209;3,4&#8209;dimethylpyridine, naphtols such as 1,5&#8209;naphthalenediol",
                   "maxLevel": "6"
                 },
                 { 
-                  "ingredient": "Hair dyeing agent: Directs (for example, HC red no. 3, 2-amino-6-chloro-4-nitrophenol, basic yellow 87)",
+                  "ingredient": "Hair dyeing agent: Directs",
+                  "ingredientExample": "HC red no. 3, 2&#8209;amino&#8209;6&#8209;chloro&#8209;4&#8209;nitrophenol, basic yellow 87",
                   "maxLevel": "6"
                 },
                 { 
-                  "ingredient": "Alkaline agents (for example, ammonium hydroxide, ethanolamine)",
+                  "ingredient": "Alkaline agents",
+                  "ingredientExample": "Ammonium hydroxide, ethanolamine",
                   "note": "Maximum concentration of ammonium hydroxide permitted is 6%",
                   "maxLevel": "10"
                 },
                 { 
-                  "ingredient": "Cationic surfactants (for example, dicetyldimonium chloride, PEG-2 oleamine)",
+                  "ingredient": "Cationic surfactants",
+                  "ingredientExample": "Dicetyldimonium chloride, PEG&#8209;2 oleamine",
                   "maxLevel": "5"
                 },
                 { 
-                  "ingredient": "Cationic polymers (for example, polyquaternium-6)",
+                  "ingredient": "Cationic polymers",
+                  "ingredientExample": "Polyquaternium&#8209;6",
                   "maxLevel": "5"
                 },
                 { 
-                  "ingredient": "Additional ingredients (for example, hair conditioning agents, pearlescent agents)",
+                  "ingredient": "Additional ingredients",
+                  "ingredientExample": "Hair conditioning agents, pearlescent agents",
                   "maxLevel": "5"
                 },
                 { 
-                  "ingredient": "Antioxidants, reducing agents (for example, ascorbic acid, sodium metabisulfite)",
+                  "ingredient": "Antioxidants, reducing agents",
+                  "ingredientExample": "Ascorbic acid, sodium metabisulfite",
                   "maxLevel": "3"
                 },
                 { 
@@ -516,7 +891,8 @@ module.exports = {
                   "maxLevel": "2"
                 },
                 { 
-                  "ingredient": "Chelating agents (for example, EDTA)",
+                  "ingredient": "Chelating agents",
+                  "ingredientExample": "EDTA",
                   "maxLevel": "1"
                 },
                 { 
@@ -526,47 +902,47 @@ module.exports = {
               ],
             "pHrules":
               [
-                { "pHrule": "pH value: 8 to 11.6" },
-                { "pHrule": "pH value of the mixture with oxidative part: 6 to 11.6" }
+                { "pHrule": "item before mixing: 8 to 11.6" },
+                { "pHrule": "mixture with oxidative part: 6 to 11.6" }
               ]
             },
             { "name" : "Hair colourant permanent oxidative type type 2 two components colourant part with high level of oils",
-              "number" : "11.5"
+              "number" : 5
             },
             { "name" : "Hair colourant permanent oxidative type type 3 multi components colourant part a",
-              "number" : "11.6"
+              "number" : 6
             },
             { "name" : "Hair colourant permanent oxidative type type 3 multi components colourant part b",
-              "number" : "11.7"
+              "number" : 7
             },
             { "name" : "Dye remover reducing type part a",
-              "number" : "11.10"
+              "number" : 10
             },
             { "name" : "Dye remover reducing type part b",
-              "number" : "11.11"
+              "number" : 11
             },
             { "name" : "Dye remover oxidative type part a",
-              "number" : "11.12"
+              "number" : 12
             },
             { "name" : "Dye remover oxidative type part b",
-              "number" : "11.13"
+              "number" : 13
             },
             { "name" : "Skin dye removing cleanser reducing type",
-              "number" : "11.14"
+              "number" : 14
             },
             { "name" : "Hair bleach powder",
-              "number" : "11.15"
+              "number" : 15
             },
             { "name" : "Hair bleach paste",
-              "number" : "11.16"
+              "number" : 16
             },
             { "name" : "Hair bleach oxidative part type 1",
-              "number" : "11.17"
+              "number" : 17
             }
           ]
         },
         { 
-          "categoryName" : "Hair styling products",
+          "categoryName" : "Hair styling",
           "formulations" : [
             ]
         },
@@ -600,7 +976,7 @@ module.exports = {
             "CASnumber": "",
             "ECnumber": "",
             "colour": "Green",
-            "productType": "Rinse-off products",
+            "productType": "Rinse-off",
             "maxConcentration": "",
             "other": "",
             "conditions": ""
@@ -611,7 +987,7 @@ module.exports = {
             "CASnumber": "",
             "ECnumber": "",
             "colour": "Greenw",
-            "productType": "Not to be used in products applied on mucous membranes",
+            "productType": "Not to be used in applied on mucous membranes",
             "maxConcentration": "",
             "other": "",
             "conditions": ""

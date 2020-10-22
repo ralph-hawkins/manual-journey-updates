@@ -1,0 +1,49 @@
+
+    <div class='govuk-grid-column-two-thirds'>
+      <span class="govuk-caption-l">Frame formulation for {{ data.frameformulations[parent].categoryName | lower }} cosmetic products</span>
+      <h1 class='govuk-heading-l'>
+        {{ data.frameformulations[parent].formulations[child].name }}
+      </h1>
+      {% if data.frameformulations[parent].formulations[child].subname %}
+        <h2 class='govuk-heading-m'>
+            {{ data.frameformulations[parent].formulations[child].subname }}
+        </h2>
+      {% endif %}
+      <dl class="meta govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row govuk-body-s">
+          <dt class="govuk-summary-list__key no-border">
+            Formulation number:
+          </dt>
+          <dd class="govuk-summary-list__value no-border">
+            {{ data.frameformulations[parent].categoryNumber }}.{{ data.frameformulations[parent].formulations[child].number }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-body-s no-border">
+        {% if data.frameformulations[parent].formulations[child].relatedTo %}
+          <dt class="govuk-summary-list__key no-border">
+            Related formulations:
+          </dt>
+          <dd class="govuk-summary-list__value no-border">
+            {{ data.frameformulations[parent].formulations[child].relatedTo }}
+          </dd>
+          {% endif %}
+        </div>
+      </dl>
+      {% if data.frameformulations[parent].formulations[child].note %}
+        <p>
+          {{ data.frameformulations[parent].formulations[child].note }}
+        </p>
+      {% endif %}
+      {% if data.frameformulations[parent].formulations[child].pHrules %}
+      <p class='govuk-!-margin-bottom-1'>
+        Permitted pH range:
+      </p>
+      <ul class='govuk-list govuk-list--bullet govuk-!-margin-bottom-6'>
+        {% for item in data.frameformulations[parent].formulations[child].pHrules %}
+          <li>
+            {{ item.pHrule }}
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
