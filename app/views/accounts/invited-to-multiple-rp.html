@@ -6,161 +6,43 @@
 {% endblock %}
 
 {% block beforeContent %}
-
 {% endblock %}
+
+{# {% set inviteSenders = [
+  {organisation: 'Make-up your mind LTD', tokenValid: true}
+  ] %} #}
+
+{% set inviteSenders = [
+  {organisation: 'Make-up your mind LTD', tokenValid: true, dateInvited: '27 October 2020', inviteSender: 'John Peel'},
+  {organisation: 'Nine inch nails', tokenValid: true, dateInvited: '2 October 2020', inviteSender: 'John Peel'},
+  {organisation: 'Bat for lashes', tokenValid: true, dateInvited: '20 October 2020', inviteSender: 'John Peel'},
+  {organisation: 'Small faces', tokenValid: expired, dateInvited: '20 October 2020', inviteSender: 'John (skin) Peel'}
+  ] %}
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full pageMeta">
-      <h1 class=''>
-        1 invite, valid token
-      </h1>
-      <hr>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class='govuk-heading-xl'>
-        You have an invite to join Make-up your mind LTD
-      </h1>
-      <p>
-        To join <span class='no-wrap'>Make-up your mind LTD,</span> follow the link in the invite email.
-      </p>
-      <p>
-        If you can’t find the invite email, someone in the team will need to resend the invite.
-      </p>
-      <h2 class='govuk-heading-s'>
-        Creat a new Responsible Person
-      </h2>
-      <p class=''>
-        If you do not want join <span class='no-wrap'>Make-up your mind LTD</span> now, <a href='#' class='govuk-link--no-visited-state'>create a new Responsible Person</a>.
-      </p>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full pageMeta govuk-!-margin-bottom-9">
-      <h1 class=''>
-        1 invite, expired token
-      </h1>
-      <hr>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class='govuk-heading-xl'>
-        You were invited to join Make-up your mind LTD
-      </h1>
-      <p>
-        The invite to join <span class='no-wrap'>Make-up your mind LTD</span> has expired, someone in the team will need to resend the invite.
-      </p>
-      <h2 class='govuk-heading-s'>
-        Creat a new Responsible Person
-      </h2>
-      <p class=''>
-        If you do not want join <span class='no-wrap'>Make-up your mind LTD</span> now, <a href='#' class='govuk-link--no-visited-state'>create a new Responsible Person</a>.
-      </p>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full pageMeta govuk-!-margin-bottom-9">
-      <h1 class=''>
-        Multiple invites, all valid
-      </h1>
-      <hr>
-    </div>
-  </div> 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class='govuk-heading-xl'>
-        You have invites to join other Responsible Persons
-      </h1>
-      <p class='govuk-!-margin-bottom-1'>
-        You have been invited to join:
-      </p>
-      <ul class='govuk-list govuk-list--bullet'>
-        <li>Nine inch nails</li>
-        <li>Bat for lashes</li>
-        <li>Warpaint</li>
-      </ul>
-      <p>
-        To join any these Responsible Persons follow the link in the invite email.
-      </p>
-      <p class=''>
-        If you can’t find the invite emails, someone in the team will need to send resend the invite.
-      </p>
-      <h2 class='govuk-heading-s'>
-        Creat a new Responsible Person
-      </h2>
-      <p class=''>
-        If you do not want join another Responsible Person now, <a href='#' class='govuk-link--no-visited-state'>create a new Responsible Person</a>.
-      </p>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full pageMeta govuk-!-margin-bottom-9">
-      <h1 class=''>
-        Multiple invites, mix of expired and valid
-      </h1>
-      <hr>
-    </div>
-  </div> 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class='govuk-heading-xl'>
-        You have invites to join other Responsible Persons
-      </h1>
-      <p class='govuk-!-margin-bottom-1'>
-        You have been invited to join:
-      </p>
-      <ul class='govuk-list govuk-list--bullet'>
-        <li>Nine inch nails</li>
-        <li>Bat for lashes</li>
-        <li>Warpaint</li>
-      </ul>
-      <p class=''>
-        To join <span class='no-wrap'>Nine inch nails</span> or <span class='no-wrap'>Bat for lashes</span> follow the link in the invite emails. If you can’t find the invite emails, someone in the team will need to resend the invite.
-      </p>
-      <p>
-        The invite to join <span class='no-wrap'>Warpaint</span> has expired, someone in the team will need to resend the invite.
-      </p>
-      <h2 class='govuk-heading-s'>
-        Creat a new Responsible Person
-      </h2>
-      <p class=''>
-        If you do not want join another Responsible Person now, <a href='#' class='govuk-link--no-visited-state'>create a new Responsible Person</a>.
-      </p>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full pageMeta govuk-!-margin-bottom-9">
-      <h1 class=''>
-        Multiple invites, all expired
-      </h1>
-      <hr>
-    </div>
-  </div> 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class='govuk-heading-xl'>
-        You have invites to join other Responsible Persons
-      </h1>
-      <p class='govuk-!-margin-bottom-1'>
-        You have been invited to join:
-      </p>
-      <ul class='govuk-list govuk-list--bullet'>
-        <li>Nine inch nails</li>
-        <li>Bat for lashes</li>
-        <li>Warpaint</li>
-      </ul>
-      <p>
-        The invites have expired. To join any of these Responsible Persons someone in the team will need to resend the invite.
-      </p>
-      <h2 class='govuk-heading-s'>
-        Creat a new Responsible Person
-      </h2>
-      <p class=''>
-        If you do not want join another Responsible Person now, <a href='#' class='govuk-link--no-visited-state'>create a new Responsible Person</a>.
-      </p>
+    <div class='govuk-grid-column-two-thirds'>
+        <h1 class="govuk-heading-xl">
+          Who do you want to submit cosmetic product notifications for?
+        </h1>
+        <ul class='govuk-list'>
+          {% for item in inviteSenders %}
+          <li>
+            <span class='no-wrap govuk-!-font-weight-bold'>{{ item.organisation }}</span>
+          <p>
+          {% if item.tokenValid %}
+            Check your email inbox for your invite, sent <span class='no-wrap'>{{ item.dateInvited }}</span>.
+          {% else %}
+            Your invite has expired and needs to be resent. You were invited by <span class='no-wrap'>{{ item.inviteSender }}</span>.
+          {% endif %}
+          </p>
+        </li>
+          {% endfor %}
+          <p>or</p>
+          <li>
+            <span class=''>another organisation</span> — <a href='#' class='govuk-link--no-visited-state'>create a new Responsible Person</a>.
+          </li>
+        </ul>
     </div>
   </div>
 {% endblock %}
