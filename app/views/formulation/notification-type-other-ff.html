@@ -31,7 +31,7 @@
     }) if errorState }}
 
     <h1 class="govuk-heading-xl">
-      How do you want to tell us about the ingredients?
+      There is no frame formulation for ‘Other face care products other than face mask’
     </h1>
 
     {{ govukRadios({
@@ -39,7 +39,7 @@
       name: "where-do-you-live",
       fieldset: {
         legend: {
-          text: "",
+          text: "How do you want to tell us about the ingredients?",
           classes: "govuk-fieldset__legend--m"
         }
       },
@@ -49,10 +49,7 @@
       items: [
         {
           value: "england",
-          text: "Choose a frame formulation that matches the product",
-          hint: {
-            text: "A ‘frame formulation’ lists the ingredients and their maximum concentration."
-          }
+          text: "Choose a different frame formulation"
         },
         {
           value: "scotland",

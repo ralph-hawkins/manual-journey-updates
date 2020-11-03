@@ -17,6 +17,8 @@
 {% endblock %}
 
 
+{% set foo = ['one', 'two', 'three'] %}
+
 {% macro singleItem(errorState=false) %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -34,98 +36,51 @@
     }) if errorState }}
 
     <h1 class='govuk-heading-l'>
-      Face care products other than face mask
+      Frame formulations for face care products other than face mask
     </h1>
-  </div>
-  <div class="govuk-grid-column-full">
-
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          Which frame formulation matches your product most closely?
-        </legend>
-        <div id="contact-hint" class="govuk-hint">
-          Select one option.
-        </div>
-        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
-            <label class="govuk-label govuk-radios__label" for="sign-in">
-              {% set child='0' %}
-              {{ data.frameformulations[parent].formulations[child].name }}
-            </label>
-            <details class="govuk-details govuk-!-margin-left-3" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  See ingredients and quantity
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                {% include "../includes/frame-formulation-table.html" %}
-              </div>
-            </details>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
-            <label class="govuk-label govuk-radios__label" for="sign-in">
-              {% set child='1' %}
-              {{ data.frameformulations[0].formulations[child].name }}
-            </label>
-            <details class="govuk-details govuk-!-margin-left-3" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  See ingredients and quantity
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                {% include "../includes/frame-formulation-table.html" %}
-              </div>
-            </details>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
-            <label class="govuk-label govuk-radios__label" for="sign-in">
-              {% set child='2' %}
-              {{ data.frameformulations[0].formulations[child].name }}
-            </label>
-            <details class="govuk-details govuk-!-margin-left-3" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  See ingredients and quantity
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                {% include "../includes/frame-formulation-table.html" %}
-              </div>
-            </details>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
-            <label class="govuk-label govuk-radios__label" for="sign-in">
-              {% set child='3' %}
-              {{ data.frameformulations[0].formulations[child].name }}
-            </label>
-            <details class="govuk-details govuk-!-margin-left-3" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  See ingredients and quantity
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                {% include "../includes/frame-formulation-table.html" %}
-              </div>
-            </details>
+    <p>
+      A ‘frame formulation’ lists the ingredients and their maximum concentration.
+    </p>
+    <p>
+     <a href='#'>View face care products other than face mask frame formulations (opens in a new tab)</a>
+    </p>
+    <p class='govuk-!-margin-bottom-1'>
+      Only choose a frame formulation that:
+    </p>
+    <ul class='govuk-list govuk-list--bullet'>
+      <li>covers all ingredients in your product</li>
+      <li>lists concentrations equal to or greater than the concentration of that ingredients in your product</li>
+    </ul>
+    <p>
+      If more than one formulation covers your product, choose the closest match.
+    </p>
+    <div class="govuk-form-group govuk-!-margin-top-6">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Which frame formulation matches your product?
+          </legend>
+          <div class="govuk-radios">
+            {% for item in data.frameformulations[0].formulations %}
+              {% if loop.index < 8 %}
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                        {{ item.name }}
+                      </label>
+                </div>
+              {% endif %}
+            {% endfor %}
           </div>
           <div class="govuk-radios__divider">or</div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="where-do-you-live-6" name="where-do-you-live" type="radio" value="abroad">
             <label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
-              None of these match the product
+              None of these formulations match my product
             </label>
           </div>
-        </div>
-
-      </fieldset>
+        </fieldset>
+      </div>
     </div>
 
   </div>
@@ -139,6 +94,6 @@
       <hr>
     </div>
   </div>
- {% set errorState = true %}
- {{singleItem(errorState=true)}}
+{#  {% set errorState = true %}
+ {{singleItem(errorState=true)}} #}
 {% endblock %}

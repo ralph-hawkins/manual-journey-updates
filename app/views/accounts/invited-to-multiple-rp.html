@@ -13,9 +13,6 @@
   ] %} #}
 
 {% set inviteSenders = [
-  {organisation: 'Make-up your mind LTD', tokenValid: true, dateInvited: '27 October 2020', inviteSender: 'John Peel'},
-  {organisation: 'Nine inch nails', tokenValid: true, dateInvited: '2 October 2020', inviteSender: 'John Peel'},
-  {organisation: 'Bat for lashes', tokenValid: true, dateInvited: '20 October 2020', inviteSender: 'John Peel'},
   {organisation: 'Small faces', tokenValid: expired, dateInvited: '20 October 2020', inviteSender: 'John (skin) Peel'}
   ] %}
 
@@ -33,7 +30,7 @@
           {% if item.tokenValid %}
             Check your email inbox for your invite, sent <span class='no-wrap'>{{ item.dateInvited }}</span>.
           {% else %}
-            Your invite has expired and needs to be resent. You were invited by <span class='no-wrap'>{{ item.inviteSender }}</span>.
+            Your invite has expired and needs to be resent. You were invited by <span class='no-wrap'>{{ item.inviteSender }}, Jenny Peel and Ian Skin</span>.
           {% endif %}
           </p>
         </li>
